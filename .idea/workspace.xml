@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acd83c6c-3cd0-4491-93a8-87fd1b28d2e4" name="Changes" comment="feat: xx">
+    <list default="true" id="acd83c6c-3cd0-4491-93a8-87fd1b28d2e4" name="Changes" comment="fix: delete the DS_Store file">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +16,14 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="fix: delete the DS_Store file">
+      <created>1670428522493</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670428522493</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -28,5 +36,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: delete the DS_Store file" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: delete the DS_Store file" />
   </component>
 </project>
