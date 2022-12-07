@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA7274CE293BABC0008B669E /* NetEaseMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274CD293BABC0008B669E /* NetEaseMusicApp.swift */; };
+		AA7274D0293BABC0008B669E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274CF293BABC0008B669E /* ContentView.swift */; };
+		AA7274D2293BABC2008B669E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7274D1293BABC2008B669E /* Assets.xcassets */; };
+		AA7274D6293BABC2008B669E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7274D5293BABC2008B669E /* Preview Assets.xcassets */; };
+		AA7274EB293BBEE1008B669E /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274EA293BBEE1008B669E /* HexColor.swift */; };
+		AA7274EF293DD449008B669E /* AccountSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274EE293DD449008B669E /* AccountSet.swift */; };
+		AA7274F7293DD63B008B669E /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274F6293DD63B008B669E /* CommunityView.swift */; };
+		AA7274F9293DD653008B669E /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274F8293DD653008B669E /* FollowView.swift */; };
+		AA7274FB293DD66C008B669E /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274FA293DD66C008B669E /* MineView.swift */; };
+		AA7274FD293DD6E5008B669E /* BodCastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274FC293DD6E5008B669E /* BodCastView.swift */; };
+		AA7274FF293DD6F3008B669E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274FE293DD6F3008B669E /* ExploreView.swift */; };
+		AAEC04FC293DDEC200B6A089 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = AAEC04FB293DDEC200B6A089 /* SwiftUIFontIcon */; };
+		AAEC04FF293DE52A00B6A089 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC04FE293DE52A00B6A089 /* MainTabView.swift */; };
+		AAEC0503293DE98200B6A089 /* DomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC0502293DE98200B6A089 /* DomainModel.swift */; };
+		AAEC0506293DEEB300B6A089 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC0505293DEEB300B6A089 /* LoginView.swift */; };
+		AAEC0508293DEEC500B6A089 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC0507293DEEC500B6A089 /* LoginViewModel.swift */; };
+		AAEC050A293ECF5A00B6A089 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC0509293ECF5A00B6A089 /* DataRequest.swift */; };
+		AAEC050D293F0D6200B6A089 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AAEC050C293F0D6200B6A089 /* Alamofire */; };
+		AAEC0512293F3D8300B6A089 /* UserBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC0511293F3D8300B6A089 /* UserBinding.swift */; };
+		AAEC0515293F883700B6A089 /* UserBasicAccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC0514293F883700B6A089 /* UserBasicAccountType.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA7274CA293BABC0008B669E /* NetEaseMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetEaseMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA7274CD293BABC0008B669E /* NetEaseMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetEaseMusicApp.swift; sourceTree = "<group>"; };
+		AA7274CF293BABC0008B669E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA7274D1293BABC2008B669E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA7274D3293BABC2008B669E /* NetEaseMusic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetEaseMusic.entitlements; sourceTree = "<group>"; };
+		AA7274D5293BABC2008B669E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA7274EA293BBEE1008B669E /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		AA7274EE293DD449008B669E /* AccountSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSet.swift; sourceTree = "<group>"; };
+		AA7274F6293DD63B008B669E /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
+		AA7274F8293DD653008B669E /* FollowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowView.swift; sourceTree = "<group>"; };
+		AA7274FA293DD66C008B669E /* MineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineView.swift; sourceTree = "<group>"; };
+		AA7274FC293DD6E5008B669E /* BodCastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodCastView.swift; sourceTree = "<group>"; };
+		AA7274FE293DD6F3008B669E /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		AAEC04FE293DE52A00B6A089 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		AAEC0502293DE98200B6A089 /* DomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModel.swift; sourceTree = "<group>"; };
+		AAEC0505293DEEB300B6A089 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AAEC0507293DEEC500B6A089 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AAEC0509293ECF5A00B6A089 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		AAEC0511293F3D8300B6A089 /* UserBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBinding.swift; sourceTree = "<group>"; };
+		AAEC0514293F883700B6A089 /* UserBasicAccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicAccountType.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA7274C7293BABC0008B669E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAEC04FC293DDEC200B6A089 /* SwiftUIFontIcon in Frameworks */,
+				AAEC050D293F0D6200B6A089 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA7274C1293BABC0008B669E = {
+			isa = PBXGroup;
+			children = (
+				AA7274CC293BABC0008B669E /* NetEaseMusic */,
+				AA7274CB293BABC0008B669E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA7274CB293BABC0008B669E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274CA293BABC0008B669E /* NetEaseMusic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA7274CC293BABC0008B669E /* NetEaseMusic */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC0510293F3CF000B6A089 /* Model */,
+				AAEC0500293DE7FC00B6A089 /* Config */,
+				AA7274E9293BBEC2008B669E /* Extension */,
+				AA7274DF293BAFD4008B669E /* Util */,
+				AA7274DD293BAFA6008B669E /* Component */,
+				AA7274DC293BAF9B008B669E /* Core */,
+				AA7274CD293BABC0008B669E /* NetEaseMusicApp.swift */,
+				AA7274CF293BABC0008B669E /* ContentView.swift */,
+				AA7274D1293BABC2008B669E /* Assets.xcassets */,
+				AA7274D3293BABC2008B669E /* NetEaseMusic.entitlements */,
+				AA7274D4293BABC2008B669E /* Preview Content */,
+			);
+			path = NetEaseMusic;
+			sourceTree = "<group>";
+		};
+		AA7274D4293BABC2008B669E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274D5293BABC2008B669E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AA7274DC293BAF9B008B669E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274ED293DD419008B669E /* Interface */,
+				AA7274F0293DD5BA008B669E /* views */,
+				AA7274EC293DD40E008B669E /* Enum */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AA7274DD293BAFA6008B669E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		AA7274DF293BAFD4008B669E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC0509293ECF5A00B6A089 /* DataRequest.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		AA7274E9293BBEC2008B669E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274EA293BBEE1008B669E /* HexColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AA7274EC293DD40E008B669E /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		AA7274ED293DD419008B669E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274EE293DD449008B669E /* AccountSet.swift */,
+			);
+			name = Interface;
+			path = Enum/Interface;
+			sourceTree = "<group>";
+		};
+		AA7274F0293DD5BA008B669E /* views */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC0504293DEE8B00B6A089 /* Login */,
+				AAEC04FD293DE50500B6A089 /* MainTab */,
+				AA7274F5293DD61B008B669E /* Community */,
+				AA7274F4293DD604008B669E /* Follow */,
+				AA7274F3293DD5FC008B669E /* Mine */,
+				AA7274F2293DD5CD008B669E /* Bodcast */,
+				AA7274F1293DD5C3008B669E /* Explore */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		AA7274F1293DD5C3008B669E /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274FE293DD6F3008B669E /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		AA7274F2293DD5CD008B669E /* Bodcast */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274FC293DD6E5008B669E /* BodCastView.swift */,
+			);
+			path = Bodcast;
+			sourceTree = "<group>";
+		};
+		AA7274F3293DD5FC008B669E /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274FA293DD66C008B669E /* MineView.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		AA7274F4293DD604008B669E /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274F8293DD653008B669E /* FollowView.swift */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		AA7274F5293DD61B008B669E /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				AA7274F6293DD63B008B669E /* CommunityView.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		AAEC04FD293DE50500B6A089 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC04FE293DE52A00B6A089 /* MainTabView.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		AAEC0500293DE7FC00B6A089 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC0502293DE98200B6A089 /* DomainModel.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		AAEC0504293DEE8B00B6A089 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC0505293DEEB300B6A089 /* LoginView.swift */,
+				AAEC0507293DEEC500B6A089 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AAEC0510293F3CF000B6A089 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC0513293F880F00B6A089 /* User */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAEC0513293F880F00B6A089 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC0511293F3D8300B6A089 /* UserBinding.swift */,
+				AAEC0514293F883700B6A089 /* UserBasicAccountType.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA7274C9293BABC0008B669E /* NetEaseMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA7274D9293BABC2008B669E /* Build configuration list for PBXNativeTarget "NetEaseMusic" */;
+			buildPhases = (
+				AA7274C6293BABC0008B669E /* Sources */,
+				AA7274C7293BABC0008B669E /* Frameworks */,
+				AA7274C8293BABC0008B669E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetEaseMusic;
+			packageProductDependencies = (
+				AAEC04FB293DDEC200B6A089 /* SwiftUIFontIcon */,
+				AAEC050C293F0D6200B6A089 /* Alamofire */,
+			);
+			productName = NetEaseMusic;
+			productReference = AA7274CA293BABC0008B669E /* NetEaseMusic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA7274C2293BABC0008B669E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					AA7274C9293BABC0008B669E = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = AA7274C5293BABC0008B669E /* Build configuration list for PBXProject "NetEaseMusic" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA7274C1293BABC0008B669E;
+			packageReferences = (
+				AAEC04FA293DDEC100B6A089 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+				AAEC050B293F0D6200B6A089 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = AA7274CB293BABC0008B669E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA7274C9293BABC0008B669E /* NetEaseMusic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA7274C8293BABC0008B669E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7274D6293BABC2008B669E /* Preview Assets.xcassets in Resources */,
+				AA7274D2293BABC2008B669E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA7274C6293BABC0008B669E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7274FD293DD6E5008B669E /* BodCastView.swift in Sources */,
+				AA7274FF293DD6F3008B669E /* ExploreView.swift in Sources */,
+				AA7274EB293BBEE1008B669E /* HexColor.swift in Sources */,
+				AA7274F9293DD653008B669E /* FollowView.swift in Sources */,
+				AA7274D0293BABC0008B669E /* ContentView.swift in Sources */,
+				AAEC0515293F883700B6A089 /* UserBasicAccountType.swift in Sources */,
+				AA7274FB293DD66C008B669E /* MineView.swift in Sources */,
+				AAEC0506293DEEB300B6A089 /* LoginView.swift in Sources */,
+				AAEC050A293ECF5A00B6A089 /* DataRequest.swift in Sources */,
+				AA7274EF293DD449008B669E /* AccountSet.swift in Sources */,
+				AAEC0508293DEEC500B6A089 /* LoginViewModel.swift in Sources */,
+				AA7274F7293DD63B008B669E /* CommunityView.swift in Sources */,
+				AAEC0503293DE98200B6A089 /* DomainModel.swift in Sources */,
+				AAEC0512293F3D8300B6A089 /* UserBinding.swift in Sources */,
+				AA7274CE293BABC0008B669E /* NetEaseMusicApp.swift in Sources */,
+				AAEC04FF293DE52A00B6A089 /* MainTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA7274D7293BABC2008B669E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA7274D8293BABC2008B669E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AA7274DA293BABC2008B669E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NetEaseMusic/NetEaseMusic.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NetEaseMusic/Preview Content\"";
+				DEVELOPMENT_TEAM = 483MCABWQ8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wanggang.NetEaseMusic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA7274DB293BABC2008B669E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NetEaseMusic/NetEaseMusic.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NetEaseMusic/Preview Content\"";
+				DEVELOPMENT_TEAM = 483MCABWQ8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wanggang.NetEaseMusic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA7274C5293BABC0008B669E /* Build configuration list for PBXProject "NetEaseMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7274D7293BABC2008B669E /* Debug */,
+				AA7274D8293BABC2008B669E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA7274D9293BABC2008B669E /* Build configuration list for PBXNativeTarget "NetEaseMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7274DA293BABC2008B669E /* Debug */,
+				AA7274DB293BABC2008B669E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AAEC04FA293DDEC100B6A089 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		AAEC050B293F0D6200B6A089 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AAEC04FB293DDEC200B6A089 /* SwiftUIFontIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAEC04FA293DDEC100B6A089 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
+			productName = SwiftUIFontIcon;
+		};
+		AAEC050C293F0D6200B6A089 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAEC050B293F0D6200B6A089 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AA7274C2293BABC0008B669E /* Project object */;
+}

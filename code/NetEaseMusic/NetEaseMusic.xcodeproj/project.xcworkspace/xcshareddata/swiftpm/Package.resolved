@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
+        "version" : "5.6.4"
+      }
+    },
+    {
+      "identity" : "swiftuifonticon",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/huybuidac/SwiftUIFontIcon",
+      "state" : {
+        "revision" : "4f170fbf443d985ae518a14a12ec8194ec6b08eb",
+        "version" : "2.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
