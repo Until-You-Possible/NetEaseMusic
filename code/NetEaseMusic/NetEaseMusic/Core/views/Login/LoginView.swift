@@ -61,7 +61,13 @@ struct LoginView: View {
             }
             // MARK: login message (including: button/tips/discleamis/agreements/polices)
             VStack {
-                Text("login Message")
+                HStack {
+                    VStack {
+                        Text("telephone number")
+                        Text("中国移动提供认证服务")
+                    }
+                    Image(systemName: "arrow.left.arrow.right")
+                }
             }
             // MARK: other login ways
             VStack {
