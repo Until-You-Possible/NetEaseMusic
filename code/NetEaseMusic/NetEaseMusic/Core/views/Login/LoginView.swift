@@ -14,6 +14,8 @@ struct LoginView: View {
     
     private var viewModel = LoginViewModel()
     
+    @State var checked = false
+    
     // MARK: implement the gradient for background from top to bottom
     var gradient: Gradient {
         let stops: [Gradient.Stop] = [
@@ -61,13 +63,78 @@ struct LoginView: View {
             }
             // MARK: login message (including: button/tips/discleamis/agreements/polices)
             VStack {
-                HStack {
-                    VStack {
-                        Text("telephone number")
+                HStack(alignment: .top) {
+                    VStack() {
+                        Text("138 · · · · 1234")
+                            .font(.system(size: 24))
                         Text("中国移动提供认证服务")
+                            .font(.system(size: 12))
+                            .foregroundColor(.gray)
+                            .tracking(2)
                     }
-                    Image(systemName: "arrow.left.arrow.right")
+                    Button {
+                        // action for change the login of way
+                    } label: {
+                        Image(systemName: "arrow.left.arrow.right")
+                            .font(.system(size: 12))
+                            .foregroundColor(Color(hex: "#ababab"))
+                            .frame(width: 26, height: 26)
+                            .background(Color(hex: "#f0f0f0"))
+                            .clipShape(Circle())
+                    }
                 }
+                .padding([.top], 110)
+                .padding([.leading], 26)
+                
+                // MARK: main button of login
+                Button {
+                    // use phone number to login directly
+                } label: {
+                    Text("一键登录")
+                        .font(.system(size: 20))
+                        .foregroundColor(.white)
+                        .frame(width: 320, height: 50)
+                        .background(Color(hex: "#e75549"))
+                        .clipShape(Capsule())
+                }
+                .overlay {
+                    Text("推荐")
+                        .font(.system(size: 10))
+                        .frame(width: 30, height: 16)
+                        .foregroundColor(.white)
+                        .background(.gray).opacity(0.8)
+                        .clipShape(Capsule())
+                        .padding([.leading], 120)
+                }
+                // some tip message about provision
+                VStack(alignment: .center) {
+                    HStack {
+                        Toggle("", isOn: $checked)
+                            .toggleStyle(CheckboxStyle())
+                        Text("我已阅读并同意")
+                        Button {
+                            // service button action
+                        } label: {
+                            Text("《服务条款》")
+                        }
+                        Button {
+                            // service button action
+                        } label: {
+                            Text("《隐私政策》")
+                        }
+                    }
+                    Button {
+                        // service button action
+                    } label: {
+                        Text("《中国移动认证服务协议》")
+                    }
+                    .padding(-6)
+                    
+                    
+                }
+                .padding(.top)
+                .font(.caption)
+                
             }
             // MARK: other login ways
             VStack {
@@ -83,6 +150,25 @@ struct LoginView: View {
                 }
             }
         }
+    }
+}
+
+struct CheckboxStyle: ToggleStyle {
+
+    func makeBody(configuration: Self.Configuration) -> some View {
+
+        return HStack {
+            Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "")
+                .resizable()
+                .frame(width: 16, height: 16)
+                .overlay {
+                    Circle()
+                        .stroke(Color(hex: "#e75549"))
+                }
+                .foregroundColor(configuration.isOn ? Color(hex: "#e75549") : .gray)
+                configuration.label
+        }
+        .onTapGesture { configuration.isOn.toggle() }
     }
 }
 
