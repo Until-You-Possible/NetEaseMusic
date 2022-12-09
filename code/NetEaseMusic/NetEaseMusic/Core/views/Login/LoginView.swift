@@ -15,6 +15,9 @@ struct LoginView: View {
     private var viewModel = LoginViewModel()
     
     @State var checked = false
+    @State var showTipsMessage = true
+    
+    // differrnet login type icon
     
     // MARK: implement the gradient for background from top to bottom
     var gradient: Gradient {
@@ -136,11 +139,63 @@ struct LoginView: View {
                 .font(.caption)
                 
             }
-            // MARK: other login ways
-            VStack {
-                Text("other login ways")
-            }
             Spacer()
+            // MARK: other login ways
+            HStack {
+                Button {
+                    
+                } label: {
+                    Image("LoginTypeWechat")
+                        .resizable()
+                        .frame(width: 24,height: 24)
+                        .padding()
+                        .overlay {
+                            Circle()
+                                .stroke(Color(hex: "#e75549"))
+                                .frame(width: 40, height: 40)
+                        }
+                }
+                Button {
+                    
+                } label: {
+                    Image("loginTypeQQ")
+                        .resizable()
+                        .frame(width: 24,height: 24)
+                        .padding()
+                        .overlay {
+                            Circle()
+                                .stroke(Color(hex: "#e75549"))
+                                .frame(width: 40, height: 40)
+                        }
+                }
+                Button {
+                    
+                } label: {
+                    Image(systemName: "apple.logo")
+                        .font(.system(size: 24))
+                        .frame(width: 24,height: 24)
+                        .padding()
+                        .overlay {
+                            Circle()
+                                .stroke(Color(hex: "#e75549"))
+                                .frame(width: 40, height: 40)
+                        }
+                }
+                Button {
+                    
+                } label: {
+                    Image("LoginTypeWeibo")
+                        .resizable()
+                        .frame(width: 24,height: 24)
+                        .padding()
+                        .overlay {
+                            Circle()
+                                .stroke(Color(hex: "#e75549"))
+                                .frame(width: 40, height: 40)
+                        }
+                }
+            }
+            
             HStack {
                 Button {
                     
@@ -148,7 +203,20 @@ struct LoginView: View {
                     Text("登陆遇到问题")
                         .foregroundColor(.gray)
                 }
+                .sheet(isPresented: $showTipsMessage) {
+                    VStack {
+                         Image(systemName: "smiley")
+                             .resizable()
+                             .scaledToFit()
+                             .frame(height: 68)
+                         
+                         Text("I'm modal sheet with multiple sizes!")
+                             .padding(.top)
+                     }
+                    .presentationDetents([.height(200)])
+                }
             }
+
         }
     }
 }
