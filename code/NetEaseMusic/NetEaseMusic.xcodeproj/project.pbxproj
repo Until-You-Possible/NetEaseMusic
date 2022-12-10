@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA14A444294459A40077345C /* LoginWithNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14A443294459A40077345C /* LoginWithNumber.swift */; };
+		AA14A44929448D160077345C /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14A44829448D160077345C /* FileLoader.swift */; };
+		AA14A44B29448F000077345C /* Districts.json in Resources */ = {isa = PBXBuildFile; fileRef = AA14A44A29448F000077345C /* Districts.json */; };
 		AA17A7442944447D005757FA /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A7432944447D005757FA /* PrivacyView.swift */; };
 		AA17A7492944503A005757FA /* ServiceRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A7482944503A005757FA /* ServiceRulesView.swift */; };
 		AA17A74D29445130005757FA /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A74C29445130005757FA /* WebViewPage.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA14A443294459A40077345C /* LoginWithNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumber.swift; sourceTree = "<group>"; };
+		AA14A44829448D160077345C /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
+		AA14A44A29448F000077345C /* Districts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Districts.json; sourceTree = "<group>"; };
 		AA17A7432944447D005757FA /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		AA17A7482944503A005757FA /* ServiceRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRulesView.swift; sourceTree = "<group>"; };
 		AA17A74C29445130005757FA /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
@@ -73,6 +79,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA14A44529448A6B0077345C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AA14A44629448AAC0077345C /* Data */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AA14A44629448AAC0077345C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AA14A44A29448F000077345C /* Districts.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		AA17A7422944444F005757FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +110,7 @@
 				AAEC0505293DEEB300B6A089 /* LoginView.swift */,
 				AA17A7482944503A005757FA /* ServiceRulesView.swift */,
 				AA17A74E294451C6005757FA /* MobileAgreementRules.swift */,
+				AA14A443294459A40077345C /* LoginWithNumber.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +134,7 @@
 		AA7274CC293BABC0008B669E /* NetEaseMusic */ = {
 			isa = PBXGroup;
 			children = (
+				AA14A44529448A6B0077345C /* Resource */,
 				AAEC0510293F3CF000B6A089 /* Model */,
 				AAEC0500293DE7FC00B6A089 /* Config */,
 				AA7274E9293BBEC2008B669E /* Extension */,
@@ -156,6 +180,7 @@
 			children = (
 				AAEC0509293ECF5A00B6A089 /* DataRequest.swift */,
 				AA17A74C29445130005757FA /* WebViewPage.swift */,
+				AA14A44829448D160077345C /* FileLoader.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -346,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA14A44B29448F000077345C /* Districts.json in Resources */,
 				AA7274D6293BABC2008B669E /* Preview Assets.xcassets in Resources */,
 				AA7274D2293BABC2008B669E /* Assets.xcassets in Resources */,
 			);
@@ -358,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA14A444294459A40077345C /* LoginWithNumber.swift in Sources */,
 				AA17A74F294451C6005757FA /* MobileAgreementRules.swift in Sources */,
 				AA17A7492944503A005757FA /* ServiceRulesView.swift in Sources */,
 				AA7274FD293DD6E5008B669E /* BodCastView.swift in Sources */,
@@ -371,6 +398,7 @@
 				AAEC0506293DEEB300B6A089 /* LoginView.swift in Sources */,
 				AAEC050A293ECF5A00B6A089 /* DataRequest.swift in Sources */,
 				AA7274EF293DD449008B669E /* AccountSet.swift in Sources */,
+				AA14A44929448D160077345C /* FileLoader.swift in Sources */,
 				AA17A74D29445130005757FA /* WebViewPage.swift in Sources */,
 				AAEC0508293DEEC500B6A089 /* LoginViewModel.swift in Sources */,
 				AA7274F7293DD63B008B669E /* CommunityView.swift in Sources */,

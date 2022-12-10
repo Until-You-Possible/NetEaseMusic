@@ -12,7 +12,9 @@ struct LoginView: View {
     
 //    private var loginViewModel: LoginViewModel
     
-    private var viewModel = LoginViewModel()
+    // private var viewModel = LoginViewModel()
+    
+    @Environment(\.presentationMode) var presentationMode
     
     @State var checked = false
     @State var showTipsMessage = false
@@ -77,16 +79,16 @@ struct LoginView: View {
                             .foregroundColor(.gray)
                             .tracking(2)
                     }
-                    Button {
-                        // action for change the login of way
-                    } label: {
+                    NavigationLink(destination: LoginWithNumber().navigationBarHidden(true),
+                                   label: {
                         Image(systemName: "arrow.left.arrow.right")
                             .font(.system(size: 12))
                             .foregroundColor(Color(hex: "#ababab"))
                             .frame(width: 26, height: 26)
                             .background(Color(hex: "#f0f0f0"))
                             .clipShape(Circle())
-                    }
+                    })
+
                 }
                 .padding([.top], 110)
                 .padding([.leading], 26)
