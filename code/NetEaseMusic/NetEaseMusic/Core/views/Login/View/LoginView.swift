@@ -15,7 +15,9 @@ struct LoginView: View {
     private var viewModel = LoginViewModel()
     
     @State var checked = false
-    @State var showTipsMessage = true
+    @State var showTipsMessage = false
+    @State var confirmationDialog = false
+    @State var navigationPrivacy = false
     
     // differrnet login type icon
     
@@ -111,29 +113,26 @@ struct LoginView: View {
                 }
                 // some tip message about provision
                 VStack(alignment: .center) {
-                    HStack {
-                        Toggle("", isOn: $checked)
-                            .toggleStyle(CheckboxStyle())
-                        Text("我已阅读并同意")
-                        Button {
-                            // service button action
-                        } label: {
-                            Text("《服务条款》")
+                        HStack {
+                            Toggle("", isOn: $checked)
+                                .toggleStyle(CheckboxStyle())
+                            Text("我已阅读并同意")
+                            NavigationLink {
+                                ServiceRulesView()
+                            } label: {
+                                Text("《服务条款》")
+                            }
+                            NavigationLink {
+                                PrivacyView()
+                            } label: {
+                                Text("《隐私政策》")
+                            }
                         }
-                        Button {
-                            // service button action
+                        NavigationLink {
+                            MobileAgreementRules()
                         } label: {
-                            Text("《隐私政策》")
+                            Text("《中国移动认证服务协议》")
                         }
-                    }
-                    Button {
-                        // service button action
-                    } label: {
-                        Text("《中国移动认证服务协议》")
-                    }
-                    .padding(-6)
-                    
-                    
                 }
                 .padding(.top)
                 .font(.caption)
@@ -198,23 +197,30 @@ struct LoginView: View {
             
             HStack {
                 Button {
-                    
+                    self.confirmationDialog = true
                 } label: {
                     Text("登陆遇到问题")
                         .foregroundColor(.gray)
                 }
-                .sheet(isPresented: $showTipsMessage) {
-                    VStack {
-                         Image(systemName: "smiley")
-                             .resizable()
-                             .scaledToFit()
-                             .frame(height: 68)
-                         
-                         Text("I'm modal sheet with multiple sizes!")
-                             .padding(.top)
-                     }
-                    .presentationDetents([.height(200)])
+                .confirmationDialog("", isPresented: $confirmationDialog) {
+                    Button("手机号已更换") {}
+                    Button("忘记密码") {}
+                    Button("找回原账号") {}
+                    Button("其他问题") {}
+                    
                 }
+//                .sheet(isPresented: $showTipsMessage) {
+//                    VStack {
+//                         Image(systemName: "smiley")
+//                             .resizable()
+//                             .scaledToFit()
+//                             .frame(height: 68)
+//
+//                         Text("I'm modal sheet with multiple sizes!")
+//                             .padding(.top)
+//                     }
+//                    .presentationDetents([.height(200)])
+//                }
             }
 
         }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA17A7442944447D005757FA /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A7432944447D005757FA /* PrivacyView.swift */; };
+		AA17A7492944503A005757FA /* ServiceRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A7482944503A005757FA /* ServiceRulesView.swift */; };
+		AA17A74D29445130005757FA /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A74C29445130005757FA /* WebViewPage.swift */; };
+		AA17A74F294451C6005757FA /* MobileAgreementRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A74E294451C6005757FA /* MobileAgreementRules.swift */; };
 		AA7274CE293BABC0008B669E /* NetEaseMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274CD293BABC0008B669E /* NetEaseMusicApp.swift */; };
 		AA7274D0293BABC0008B669E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274CF293BABC0008B669E /* ContentView.swift */; };
 		AA7274D2293BABC2008B669E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7274D1293BABC2008B669E /* Assets.xcassets */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA17A7432944447D005757FA /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		AA17A7482944503A005757FA /* ServiceRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRulesView.swift; sourceTree = "<group>"; };
+		AA17A74C29445130005757FA /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
+		AA17A74E294451C6005757FA /* MobileAgreementRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAgreementRules.swift; sourceTree = "<group>"; };
 		AA7274CA293BABC0008B669E /* NetEaseMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetEaseMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7274CD293BABC0008B669E /* NetEaseMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetEaseMusicApp.swift; sourceTree = "<group>"; };
 		AA7274CF293BABC0008B669E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +73,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA17A7422944444F005757FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAEC0507293DEEC500B6A089 /* LoginViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA17A747294447DD005757FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA17A7432944447D005757FA /* PrivacyView.swift */,
+				AAEC0505293DEEB300B6A089 /* LoginView.swift */,
+				AA17A7482944503A005757FA /* ServiceRulesView.swift */,
+				AA17A74E294451C6005757FA /* MobileAgreementRules.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AA7274C1293BABC0008B669E = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				AAEC0509293ECF5A00B6A089 /* DataRequest.swift */,
+				AA17A74C29445130005757FA /* WebViewPage.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -229,8 +257,8 @@
 		AAEC0504293DEE8B00B6A089 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				AAEC0505293DEEB300B6A089 /* LoginView.swift */,
-				AAEC0507293DEEC500B6A089 /* LoginViewModel.swift */,
+				AA17A747294447DD005757FA /* View */,
+				AA17A7422944444F005757FA /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -330,6 +358,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA17A74F294451C6005757FA /* MobileAgreementRules.swift in Sources */,
+				AA17A7492944503A005757FA /* ServiceRulesView.swift in Sources */,
 				AA7274FD293DD6E5008B669E /* BodCastView.swift in Sources */,
 				AA7274FF293DD6F3008B669E /* ExploreView.swift in Sources */,
 				AA7274EB293BBEE1008B669E /* HexColor.swift in Sources */,
@@ -337,9 +367,11 @@
 				AA7274D0293BABC0008B669E /* ContentView.swift in Sources */,
 				AAEC0515293F883700B6A089 /* UserBasicAccountType.swift in Sources */,
 				AA7274FB293DD66C008B669E /* MineView.swift in Sources */,
+				AA17A7442944447D005757FA /* PrivacyView.swift in Sources */,
 				AAEC0506293DEEB300B6A089 /* LoginView.swift in Sources */,
 				AAEC050A293ECF5A00B6A089 /* DataRequest.swift in Sources */,
 				AA7274EF293DD449008B669E /* AccountSet.swift in Sources */,
+				AA17A74D29445130005757FA /* WebViewPage.swift in Sources */,
 				AAEC0508293DEEC500B6A089 /* LoginViewModel.swift in Sources */,
 				AA7274F7293DD63B008B669E /* CommunityView.swift in Sources */,
 				AAEC0503293DE98200B6A089 /* DomainModel.swift in Sources */,
