@@ -12,6 +12,7 @@ struct LoginWithNumber: View {
     @Environment(\.presentationMode) var presentationMode
     @State var currentPhoneNumber = "";
     @State var showAllDistrictsInfo = false
+    @State var initilizeAreaCode = "86"
     
     var viewModel = LoginWithNumberViewModel()
     
@@ -33,7 +34,7 @@ struct LoginWithNumber: View {
                             self.showAllDistrictsInfo = true
                         } label: {
                             HStack(alignment: .center) {
-                                Text("+86")
+                                Text("+\(initilizeAreaCode)")
                                     .foregroundColor(.black)
                                 Image(systemName: "arrowtriangle.down.fill")
                                     .font(.system(size: 10))
@@ -55,29 +56,47 @@ struct LoginWithNumber: View {
                                     Spacer()
                                 }
                                 // countries and districts
-                                ScrollView {
-                                    LazyVStack(alignment: .leading) {
-                                        ForEach(viewModel.dataDict.keys.sorted(by: <), id: \.self) { key in
-                                            Section(header: Text(key)) {
-                                                Divider()
-                                                ForEach(viewModel.dataDict[key] ?? [], id: \.country_code) { innerItem in
-                                                    HStack(alignment: .center) {
-                                                        Text(innerItem.chinese_name)
-                                                        Spacer()
-                                                        Text("+\(innerItem.phone_code)")
+                                ZStack(alignment: .trailing) {
+                                    ScrollView {
+                                        LazyVStack(alignment: .leading) {
+                                                ForEach(viewModel.dataDict.keys.sorted(by: <), id: \.self) { key in
+                                                    Section(header: Text(key)) {
+                                                        Divider()
+                                                        ForEach(viewModel.dataDict[key] ?? [], id: \.country_code) { innerItem in
+                                                            HStack(alignment: .center) {
+                                                                Text(innerItem.chinese_name)
+                                                                Spacer()
+                                                                Text("+\(innerItem.phone_code)")
+                                                                    .foregroundColor(.gray)
+                                                            }
+                                                            // to fix the issue that gesture(onTapGesture) is invalidation when clicking the white space
+                                                            .modifier(ExpandAreaTap())
+                                                            .onTapGesture {
+                                                                self.initilizeAreaCode = innerItem.phone_code
+                                                                self.showAllDistrictsInfo = false
+                                                            }
+                                                            Divider()
+                                                        }
+                                                        .padding([.trailing], 28)
                                                     }
-                                                    Divider()
                                                 }
-
                                             }
+                                    }
+                                    // MARK: right side list of letters
+                                    VStack {
+                                        ForEach(viewModel.alphabets, id: \.self) { letter in
+                                            Text(letter)
+                                                .font(.system(size: 14))
+                                                .onTapGesture() {
+                                                    print("letter", letter)
+                                                }
                                         }
-
                                     }
                                 }
-                                
                                 Spacer()
                             }
-                            .padding()
+                            .padding([.leading, .top, .bottom])
+                            .padding([.trailing], 8)
                         }
                         
                         TextField("输入手机号", text: $currentPhoneNumber)
@@ -121,5 +140,23 @@ struct LoginWithNumber: View {
 struct LoginWithNumber_Previews: PreviewProvider {
     static var previews: some View {
         LoginWithNumber()
+    }
+}
+
+
+private struct ExpandAreaTap: ViewModifier {
+    func body(content: Content) -> some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(Color.clear)
+                .contentShape(Rectangle())
+            content
+        }
+    }
+}
+
+extension View {
+    func expandTap(tap: @escaping () -> Void) -> some View {
+        modifier(ExpandAreaTap()).onTapGesture(perform: tap)
     }
 }
