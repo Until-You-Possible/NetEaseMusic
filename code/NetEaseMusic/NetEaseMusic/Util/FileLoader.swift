@@ -12,7 +12,6 @@ struct CountriesData: Decodable {
     let name: String
     let result: [DistrictsRawData]
 }
-
 struct DistrictsRawData: Decodable {
     let english_name: String
     let chinese_name: String

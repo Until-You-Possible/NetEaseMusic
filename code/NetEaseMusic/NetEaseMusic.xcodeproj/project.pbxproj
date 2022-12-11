@@ -10,6 +10,7 @@
 		AA14A444294459A40077345C /* LoginWithNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14A443294459A40077345C /* LoginWithNumber.swift */; };
 		AA14A44929448D160077345C /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14A44829448D160077345C /* FileLoader.swift */; };
 		AA14A44B29448F000077345C /* Districts.json in Resources */ = {isa = PBXBuildFile; fileRef = AA14A44A29448F000077345C /* Districts.json */; };
+		AA14A44D29458C470077345C /* LoginWithNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14A44C29458C470077345C /* LoginWithNumberViewModel.swift */; };
 		AA17A7442944447D005757FA /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A7432944447D005757FA /* PrivacyView.swift */; };
 		AA17A7492944503A005757FA /* ServiceRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A7482944503A005757FA /* ServiceRulesView.swift */; };
 		AA17A74D29445130005757FA /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A74C29445130005757FA /* WebViewPage.swift */; };
@@ -40,6 +41,7 @@
 		AA14A443294459A40077345C /* LoginWithNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumber.swift; sourceTree = "<group>"; };
 		AA14A44829448D160077345C /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		AA14A44A29448F000077345C /* Districts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Districts.json; sourceTree = "<group>"; };
+		AA14A44C29458C470077345C /* LoginWithNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewModel.swift; sourceTree = "<group>"; };
 		AA17A7432944447D005757FA /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		AA17A7482944503A005757FA /* ServiceRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRulesView.swift; sourceTree = "<group>"; };
 		AA17A74C29445130005757FA /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				AAEC0507293DEEC500B6A089 /* LoginViewModel.swift */,
+				AA14A44C29458C470077345C /* LoginWithNumberViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				AA7274F7293DD63B008B669E /* CommunityView.swift in Sources */,
 				AAEC0503293DE98200B6A089 /* DomainModel.swift in Sources */,
 				AAEC0512293F3D8300B6A089 /* UserBinding.swift in Sources */,
+				AA14A44D29458C470077345C /* LoginWithNumberViewModel.swift in Sources */,
 				AA7274CE293BABC0008B669E /* NetEaseMusicApp.swift in Sources */,
 				AAEC04FF293DE52A00B6A089 /* MainTabView.swift in Sources */,
 			);

@@ -13,13 +13,9 @@ struct LoginWithNumber: View {
     @State var currentPhoneNumber = "";
     @State var showAllDistrictsInfo = false
     
-    init() {
-        if let data = FileLoader.readLocalFile("Districts"){
-            let rawWeather = FileLoader.loadJson(data)
-            print("rawWeather = \(rawWeather)")
-        }
-    }
+    var viewModel = LoginWithNumberViewModel()
     
+
     var body: some View {
         NavigationView {
             VStack {
@@ -60,7 +56,23 @@ struct LoginWithNumber: View {
                                 }
                                 // countries and districts
                                 ScrollView {
-                                    Text("dddd")
+                                    LazyVStack(alignment: .leading) {
+                                        ForEach(viewModel.dataDict.keys.sorted(by: <), id: \.self) { key in
+                                            Section(header: Text(key)) {
+                                                Divider()
+                                                ForEach(viewModel.dataDict[key] ?? [], id: \.country_code) { innerItem in
+                                                    HStack(alignment: .center) {
+                                                        Text(innerItem.chinese_name)
+                                                        Spacer()
+                                                        Text("+\(innerItem.phone_code)")
+                                                    }
+                                                    Divider()
+                                                }
+
+                                            }
+                                        }
+
+                                    }
                                 }
                                 
                                 Spacer()
