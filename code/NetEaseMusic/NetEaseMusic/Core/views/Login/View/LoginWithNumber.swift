@@ -20,7 +20,6 @@ struct LoginWithNumber: View {
     @State var countDown = 10
     
     var viewModel = LoginWithNumberViewModel()
-    
 
     var body: some View {
         NavigationView {
@@ -160,7 +159,8 @@ struct LoginWithNumber: View {
                                 if self.countDown != 0 {
                                     Text("重新发送\(self.countDown)S")
                                     //这里直接将Timer作为发送者every是每隔一秒
-                                    .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect(), perform: { _ in
+                                    .onReceive(Timer.publish(every: 1, on: .main, in: .common)
+                                        .autoconnect(), perform: { _ in
                                         //不等于零每隔一秒减一
                                         if self.countDown != 0 {
                                             self.countDown -= 1
@@ -199,6 +199,7 @@ struct LoginWithNumber: View {
             }
             .navigationTitle("手机号登陆")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image(systemName: "xmark")
@@ -206,12 +207,19 @@ struct LoginWithNumber: View {
                             self.presentationMode.wrappedValue.dismiss()
                         }
                 }
-                if currentPageState == "password" {
+                if currentPageState == "code" {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Text("密码登陆")
-                            .onTapGesture {
-                                print("use code to login")
-                            }
+                        NavigationLink {
+                            InputPasswordView()
+                        } label: {
+                            Text("密码登陆")
+                                .font(.system(size: 16))
+                                .frame(width: 100, height: 26)
+                                .foregroundColor(.black)
+                                .overlay(RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.gray, lineWidth: 0.75))
+                        }
+
                     }
                 }
             }

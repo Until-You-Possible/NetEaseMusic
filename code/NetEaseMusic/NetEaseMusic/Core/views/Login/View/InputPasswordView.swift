@@ -1,0 +1,52 @@
+//
+//  InputPasswordView.swift
+//  NetEaseMusic
+//
+//  Created by Ray on 2022/12/12.
+//
+
+import SwiftUI
+
+struct InputPasswordView: View {
+    
+    @State var currentPassword = ""
+    
+    var body: some View {
+            VStack {
+                VStack {
+                    TextField("请输入账号密码", text: $currentPassword)
+                    Divider()
+                }
+                .padding([.leading, .trailing], 20)
+                .padding(.top, 40)
+                Button {
+                    // login with passoword
+                } label: {
+                    Text("立即登陆")
+                        .foregroundColor(.white)
+                        .frame(width: 350, height: 40)
+                        .background(Color(hex: "#e75549"))
+                        .clipShape(Capsule())
+                }
+                .padding(.top, 40)
+                Spacer()
+            }
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink {
+                        LoginWithNumber()
+                    } label: {
+                        Image(systemName: "arrow.left")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+    }
+}
+
+struct InputPasswordView_Previews: PreviewProvider {
+    static var previews: some View {
+        InputPasswordView()
+    }
+}

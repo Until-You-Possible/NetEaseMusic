@@ -15,6 +15,7 @@
 		AA17A7492944503A005757FA /* ServiceRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A7482944503A005757FA /* ServiceRulesView.swift */; };
 		AA17A74D29445130005757FA /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A74C29445130005757FA /* WebViewPage.swift */; };
 		AA17A74F294451C6005757FA /* MobileAgreementRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA17A74E294451C6005757FA /* MobileAgreementRules.swift */; };
+		AA23757A294771330001F8DB /* InputPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA237579294771330001F8DB /* InputPasswordView.swift */; };
 		AA7274CE293BABC0008B669E /* NetEaseMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274CD293BABC0008B669E /* NetEaseMusicApp.swift */; };
 		AA7274D0293BABC0008B669E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274CF293BABC0008B669E /* ContentView.swift */; };
 		AA7274D2293BABC2008B669E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7274D1293BABC2008B669E /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		AA17A7482944503A005757FA /* ServiceRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRulesView.swift; sourceTree = "<group>"; };
 		AA17A74C29445130005757FA /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
 		AA17A74E294451C6005757FA /* MobileAgreementRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAgreementRules.swift; sourceTree = "<group>"; };
+		AA237579294771330001F8DB /* InputPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordView.swift; sourceTree = "<group>"; };
 		AA7274CA293BABC0008B669E /* NetEaseMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetEaseMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7274CD293BABC0008B669E /* NetEaseMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetEaseMusicApp.swift; sourceTree = "<group>"; };
 		AA7274CF293BABC0008B669E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				AA17A7482944503A005757FA /* ServiceRulesView.swift */,
 				AA17A74E294451C6005757FA /* MobileAgreementRules.swift */,
 				AA14A443294459A40077345C /* LoginWithNumber.swift */,
+				AA237579294771330001F8DB /* InputPasswordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				AA7274EB293BBEE1008B669E /* HexColor.swift in Sources */,
 				AA7274F9293DD653008B669E /* FollowView.swift in Sources */,
 				AA7274D0293BABC0008B669E /* ContentView.swift in Sources */,
+				AA23757A294771330001F8DB /* InputPasswordView.swift in Sources */,
 				AAEC0515293F883700B6A089 /* UserBasicAccountType.swift in Sources */,
 				AA7274FB293DD66C008B669E /* MineView.swift in Sources */,
 				AA17A7442944447D005757FA /* PrivacyView.swift in Sources */,
