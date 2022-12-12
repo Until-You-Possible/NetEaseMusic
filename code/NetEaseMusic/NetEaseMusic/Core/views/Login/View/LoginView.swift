@@ -96,6 +96,7 @@ struct LoginView: View {
                 // MARK: main button of login
                 Button {
                     // use phone number to login directly
+                    print("login with phone")
                 } label: {
                     Text("一键登录")
                         .font(.system(size: 20))

@@ -14,6 +14,7 @@ struct NetEaseMusicApp: App {
             NavigationView {
                 ContentView()
             }
+            .navigationViewStyle(.stack)
         }
     }
 }
