@@ -26,6 +26,7 @@ struct LoginWithNumber: View {
             
             VStack(alignment: .leading) {
                 
+                
                 //MARK: input the phone number
                 if currentPageState == "phone" {
                     VStack(alignment: .leading) {
