@@ -225,8 +225,7 @@ struct LoginWithNumber: View {
             }
         }
         
-        
-
+    
     }
 }
 
