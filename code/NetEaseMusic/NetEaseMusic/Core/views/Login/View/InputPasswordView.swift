@@ -31,17 +31,23 @@ struct InputPasswordView: View {
                 .padding(.top, 40)
                 Spacer()
             }
+            .navigationTitle("账号密码登陆")
             .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink {
-                        LoginWithNumber()
-                    } label: {
-                        Image(systemName: "arrow.left")
-                            .foregroundColor(.black)
-                    }
-                }
-            }
+            .navigationBarItems(leading: backBtn())
+    }
+}
+
+// backbtn
+
+struct backBtn: View {
+    var body: some View {
+        NavigationLink {
+            LoginWithNumber()
+                .navigationBarBackButtonHidden(true)
+        } label: {
+            Image(systemName: "arrow.left")
+                .foregroundColor(.black)
+        }
     }
 }
 

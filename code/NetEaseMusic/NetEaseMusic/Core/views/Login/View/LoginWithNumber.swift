@@ -18,6 +18,7 @@ struct LoginWithNumber: View {
     // password: current page is the which need to login with user's password
     @State var currentPageState = "code"
     @State var countDown = 10
+    @State var phoneCode01 = "0"
     
     var viewModel = LoginWithNumberViewModel()
 
@@ -180,6 +181,11 @@ struct LoginWithNumber: View {
                     }
                     .padding([.top], 40)
                     .padding([.leading, .trailing], 20)
+                    
+                    // input the phone code
+                    HStack {
+                        TextField("code", text: $phoneCode01)
+                    }
                     
                 }
                 
