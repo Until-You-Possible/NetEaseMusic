@@ -29,6 +29,19 @@ struct InputPasswordView: View {
                         .clipShape(Capsule())
                 }
                 .padding(.top, 40)
+                Button {
+                    // forget the password
+                } label: {
+                    HStack(alignment: .center) {
+                        Text("忘记密码")
+                            .foregroundColor(.gray)
+                        Image(systemName: "arrow.right")
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.top, 40)
+                    .padding(.leading)
+
+                }
                 Spacer()
             }
             .navigationTitle("账号密码登陆")
