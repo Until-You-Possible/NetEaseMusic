@@ -209,10 +209,14 @@ struct LoginWithNumber: View {
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Image(systemName: "xmark")
-                        .onTapGesture {
-                            self.presentationMode.wrappedValue.dismiss()
-                        }
+                    NavigationLink {
+                        LoginView()
+                            .navigationBarBackButtonHidden(true)
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.black)
+                    }
+
                 }
                 if currentPageState == "code" {
                     ToolbarItem(placement: .navigationBarTrailing) {
