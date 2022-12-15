@@ -31,11 +31,13 @@ struct InputPasswordView: View {
                 .padding(.top, 40)
                 Spacer()
             }
+            .navigationTitle("账号密码登陆")
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink {
                         LoginWithNumber()
+                            .navigationBarBackButtonHidden(true)
                     } label: {
                         Image(systemName: "arrow.left")
                             .foregroundColor(.black)

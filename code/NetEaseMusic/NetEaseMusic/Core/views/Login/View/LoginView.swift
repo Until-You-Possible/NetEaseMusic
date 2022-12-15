@@ -79,7 +79,8 @@ struct LoginView: View {
                             .foregroundColor(.gray)
                             .tracking(2)
                     }
-                    NavigationLink(destination: LoginWithNumber().navigationBarHidden(true),
+                    NavigationLink(destination: LoginWithNumber()
+                        .navigationBarHidden(true),
                                    label: {
                         Image(systemName: "arrow.left.arrow.right")
                             .font(.system(size: 12))
