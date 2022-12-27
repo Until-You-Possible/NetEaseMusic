@@ -10,6 +10,7 @@ import SwiftUI
 struct InputPasswordView: View {
     
     @State var currentPassword = ""
+    @State var isShowAlert = false
     
     var body: some View {
             VStack {
@@ -27,8 +28,16 @@ struct InputPasswordView: View {
                         .frame(width: 350, height: 40)
                         .background(Color(hex: "#e75549"))
                         .clipShape(Capsule())
+                        .onTapGesture {
+                            if self.currentPassword.isEmpty {
+                                self.isShowAlert = true
+                            }
+                        }
                 }
                 .padding(.top, 40)
+                .alert("密码不能为空", isPresented: $isShowAlert) {
+                    Button("ok", role: .cancel) {}
+                }
                 Button {
                     // forget the password
                 } label: {

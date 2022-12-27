@@ -128,6 +128,9 @@ struct LoginWithNumber: View {
                         
                         Button {
                             print("bool", currentPhoneNumber.isEmpty)
+                            if currentPhoneNumber.count == 11 {
+                                self.currentPageState = "code"
+                            }
                         } label: {
                             Text("下一步")
                                 .foregroundColor(.white)
@@ -184,8 +187,21 @@ struct LoginWithNumber: View {
                     .padding([.leading, .trailing], 20)
                     
                     // input the phone code
-                    HStack {
+                    HStack(alignment: .center) {
+                        Spacer()
                         TextField("code", text: $phoneCode01)
+                            .frame(width: 60, height: 60, alignment: .center)
+                            .border(.gray, width: 1)
+                        TextField("code", text: $phoneCode01)
+                            .frame(width: 60, height: 60)
+                            .border(.gray, width: 1)
+                        TextField("code", text: $phoneCode01)
+                            .frame(width: 60, height: 60)
+                            .border(.gray, width: 1)
+                        TextField("code", text: $phoneCode01)
+                            .frame(width: 60, height: 60)
+                            .border(.gray, width: 1)
+                        Spacer()
                     }
                     
                 }

@@ -8,11 +8,12 @@
 import Foundation
 
 
-class LoginWithNumberViewModel {
+class LoginWithNumberViewModel: ObservableObject {
     
     var districtList = [DistrictsRawData]()
     var alphabets = [String]()
     var dataDict: Dictionary<String, Array<DistrictsRawData>> = Dictionary()
+    @Published var userPhoneNumber = ""
     
     init () {
         // get the area code for all contries and districts
