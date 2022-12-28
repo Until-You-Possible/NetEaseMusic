@@ -69,5 +69,9 @@ class LoginWithNumberViewModel: ObservableObject {
             }
         }
     }
+    // get phone code from service
+    func getPhoneCode () {
+        // url
+    }
     
 }

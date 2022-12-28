@@ -173,6 +173,9 @@ struct LoginWithNumber: View {
                                     })
                                 } else {
                                     Text("获取验证码")
+                                        .onTapGesture {
+                                            print("dd")
+                                        }
                                 }
 
                             }
