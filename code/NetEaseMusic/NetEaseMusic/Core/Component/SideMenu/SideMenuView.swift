@@ -9,7 +9,27 @@ import SwiftUI
 
 struct SideMenuView: View {
     var body: some View {
-        Text("side menu")
+        VStack(alignment: .leading) {
+            HStack { Spacer() }
+            HStack(alignment: .center) {
+                HStack {
+                    Image(systemName: "person.crop.circle.fill")
+                    Text("小南-Arthur")
+                    Image(systemName: "chevron.right")
+                }
+                Spacer()
+                Image(systemName: "qrcode.viewfinder")
+            }
+            .padding(.leading, 16)
+            .padding(.trailing, 16)
+            
+            ScrollView() {
+                Text("ddd")
+            }
+            .padding(.leading, 16)
+            .padding(.trailing, 16)
+        }
+        .background(Color(hex: "f3f3f3"))
     }
 }
 
