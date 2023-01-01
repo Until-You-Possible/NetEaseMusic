@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		AA0E94E0295F15C3005F1979 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94DF295F15C3005F1979 /* SideMenuViewModel.swift */; };
 		AA0E94E2295F15D0005F1979 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94E1295F15D0005F1979 /* SideMenuView.swift */; };
+		AA0E94E729612B48005F1979 /* MessageCentralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94E629612B48005F1979 /* MessageCentralView.swift */; };
+		AA0E94E929612B64005F1979 /* MusicServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94E829612B64005F1979 /* MusicServiceView.swift */; };
+		AA0E94EB29612B7B005F1979 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94EA29612B7B005F1979 /* OtherView.swift */; };
+		AA0E94ED29612BF1005F1979 /* SideMenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94EC29612BF1005F1979 /* SideMenuListItem.swift */; };
 		AA14A444294459A40077345C /* LoginWithNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14A443294459A40077345C /* LoginWithNumber.swift */; };
 		AA14A44929448D160077345C /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14A44829448D160077345C /* FileLoader.swift */; };
 		AA14A44B29448F000077345C /* Districts.json in Resources */ = {isa = PBXBuildFile; fileRef = AA14A44A29448F000077345C /* Districts.json */; };
@@ -43,6 +47,10 @@
 /* Begin PBXFileReference section */
 		AA0E94DF295F15C3005F1979 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		AA0E94E1295F15D0005F1979 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		AA0E94E629612B48005F1979 /* MessageCentralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCentralView.swift; sourceTree = "<group>"; };
+		AA0E94E829612B64005F1979 /* MusicServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicServiceView.swift; sourceTree = "<group>"; };
+		AA0E94EA29612B7B005F1979 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
+		AA0E94EC29612BF1005F1979 /* SideMenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuListItem.swift; sourceTree = "<group>"; };
 		AA14A443294459A40077345C /* LoginWithNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumber.swift; sourceTree = "<group>"; };
 		AA14A44829448D160077345C /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		AA14A44A29448F000077345C /* Districts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Districts.json; sourceTree = "<group>"; };
@@ -98,10 +106,38 @@
 		AA0E94DE295F15A7005F1979 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				AA0E94DF295F15C3005F1979 /* SideMenuViewModel.swift */,
-				AA0E94E1295F15D0005F1979 /* SideMenuView.swift */,
+				AA0E94E429612B09005F1979 /* View */,
+				AA0E94E329612AFC005F1979 /* Model */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		AA0E94E329612AFC005F1979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA0E94DF295F15C3005F1979 /* SideMenuViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA0E94E429612B09005F1979 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA0E94E529612B19005F1979 /* SubMenuView */,
+				AA0E94E1295F15D0005F1979 /* SideMenuView.swift */,
+				AA0E94EC29612BF1005F1979 /* SideMenuListItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA0E94E529612B19005F1979 /* SubMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				AA0E94E629612B48005F1979 /* MessageCentralView.swift */,
+				AA0E94E829612B64005F1979 /* MusicServiceView.swift */,
+				AA0E94EA29612B7B005F1979 /* OtherView.swift */,
+			);
+			path = SubMenuView;
 			sourceTree = "<group>";
 		};
 		AA14A44529448A6B0077345C /* Resource */ = {
@@ -422,9 +458,13 @@
 				AA7274D0293BABC0008B669E /* ContentView.swift in Sources */,
 				AA23757A294771330001F8DB /* InputPasswordView.swift in Sources */,
 				AAEC0515293F883700B6A089 /* UserBasicAccountType.swift in Sources */,
+				AA0E94E929612B64005F1979 /* MusicServiceView.swift in Sources */,
+				AA0E94E729612B48005F1979 /* MessageCentralView.swift in Sources */,
 				AA7274FB293DD66C008B669E /* MineView.swift in Sources */,
+				AA0E94EB29612B7B005F1979 /* OtherView.swift in Sources */,
 				AA17A7442944447D005757FA /* PrivacyView.swift in Sources */,
 				AAEC0506293DEEB300B6A089 /* LoginView.swift in Sources */,
+				AA0E94ED29612BF1005F1979 /* SideMenuListItem.swift in Sources */,
 				AAEC050A293ECF5A00B6A089 /* DataRequest.swift in Sources */,
 				AA7274EF293DD449008B669E /* AccountSet.swift in Sources */,
 				AA14A44929448D160077345C /* FileLoader.swift in Sources */,
