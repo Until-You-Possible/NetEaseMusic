@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+
+
+
+
 struct SideMenuView: View {
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,11 +29,12 @@ struct SideMenuView: View {
             
             ScrollView() {
                 VStack(alignment: .leading) {
-                    HStack {
+                    HStack(alignment: .center) {
                         Text("续费黑胶VIP")
                             .foregroundColor(.white)
                             .font(.system(size: 14))
-                        Text("progress")
+                        ProgressView("", value: 50, total: 100)
+                            .frame(width: 50)
                         Text("V4")
                             .foregroundColor(.gray)
                         Spacer()
@@ -63,11 +68,32 @@ struct SideMenuView: View {
                 
                 //MARK: others
                 OtherView()
+                
+                Button {
+                    // 登陆和退出按钮
+                } label: {
+                    Text("退出登陆")
+                        .foregroundColor(Color.red)
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.white)
+                .cornerRadius(5)
+
             }
             .padding(.leading, 16)
             .padding(.trailing, 16)
         }
         .background(Color(hex: "f3f3f3"))
+    }
+}
+
+
+struct DarkBlueShadowProgressViewStyle: ProgressViewStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        ProgressView(configuration)
+            .shadow(color: Color(red: 0, green: 0, blue: 0.6),
+                    radius: 4.0, x: 1.0, y: 2.0)
     }
 }
 
