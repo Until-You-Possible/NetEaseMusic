@@ -6,45 +6,38 @@
 //
 
 import SwiftUI
+import SwiftUIFontIcon
+
+struct MessageCentral: Identifiable {
+    let id = UUID()
+    var leadIcon: String
+    var title: String
+}
 
 struct MessageCentralView: View {
+    // data
+   var messageCentralArray = [
+        MessageCentral(leadIcon: "ellipsis.message", title: "消息中心"),
+        MessageCentral(leadIcon: "camera.metering.center.weighted", title: "云贝中心"),
+        MessageCentral(leadIcon: "line.3.horizontal.decrease.circle", title: "创作者中心")
+   ]
     var body: some View {
-        VStack {
-            HStack {
-                Image(systemName: "ellipsis.message")
-                Text("消息中心")
-                Spacer()
-                Image(systemName: "arrow.right")
+        VStack(alignment: .leading) {
+            
+            ForEach(messageCentralArray) { item in
+                HStack {
+                    Image(systemName: item.leadIcon)
+                    Text(item.title)
+                    Spacer()
+                    FontIcon.text(.materialIcon(code: .chevron_right))
+                }
+                .frame(height: 40)
+                .padding([.leading, .trailing], 12)
             }
-            .frame(height: 40, alignment: .center)
-            .padding([.leading, .trailing], 20)
-            Divider()
-                .padding([.leading, .trailing], 20)
-            HStack {
-                Image(systemName: "ellipsis.message")
-                Text("云贝中心")
-                Spacer()
-                Image(systemName: "arrow.right")
-            }
-            .frame(height: 40)
-            .padding([.leading, .trailing], 20)
-            Divider()
-                .padding([.leading, .trailing], 20)
-            HStack {
-                Image(systemName: "ellipsis.message")
-                Text("创作者中心")
-                Spacer()
-                Image(systemName: "arrow.right")
-            }
-            .frame(height: 40)
-            .padding([.leading, .trailing], 20)
         }
         .background(Color.white)
         .cornerRadius(12)
-        .padding(.top, 10)
-
-        
-
+        .padding([.top, .bottom], 10)
     }
 }
 
