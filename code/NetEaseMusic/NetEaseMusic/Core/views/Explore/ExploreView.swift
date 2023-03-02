@@ -10,8 +10,36 @@ import SwiftUIFontIcon
 
 struct ExploreView: View {
     var body: some View {
-//        Text("Explore view")
-        FontIcon.text(.materialIcon(code: .person))
+        VStack {
+            // MARK: top search/scan/voice recognition fuctions
+            HStack() {
+                // MARK: search wrapper
+                HStack () {
+                    // spoltlight
+                    Image(systemName: "magnifyingglass")
+                    Text("dynamic message.....")
+                    FontIcon.text(.materialIcon(code: .flip))
+                }
+                .background(Color(hex: "#f2f2f2"))
+                .padding(.leading, 80)
+                Spacer()
+                
+                FontIcon.text(.materialIcon(code: .mic_none))
+            }
+            .background(Color.red)
+            
+            
+            ScrollView {
+                VStack {
+                    HStack { Spacer() }
+                    Text("content")
+                }
+            }
+            .background(Color.blue)
+            
+        }
+
+        
     }
 }
 

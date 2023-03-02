@@ -8,9 +8,6 @@
 import SwiftUI
 
 
-
-
-
 struct SideMenuView: View {
     var body: some View {
         VStack(alignment: .leading) {

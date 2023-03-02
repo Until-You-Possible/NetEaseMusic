@@ -13,14 +13,17 @@ struct OtherCentral: Identifiable {
     let id = UUID()
     var leadIcon: String
     var title: String
+    var isSwitch: Bool?
 }
 
 
 struct OtherView: View {
     
+    @State private var showDiffModel = false
+    
     var messageCentralArray = [
         OtherCentral(leadIcon: "ellipsis.message", title: "设置"),
-        OtherCentral(leadIcon: "camera.metering.center.weighted", title: "深色模式"),
+        OtherCentral(leadIcon: "camera.metering.center.weighted", title: "深色模式", isSwitch: true),
         OtherCentral(leadIcon: "line.3.horizontal.decrease.circle", title: "定时关闭"),
         OtherCentral(leadIcon: "line.3.horizontal.decrease.circle", title: "个性装扮"),
         OtherCentral(leadIcon: "line.3.horizontal.decrease.circle", title: "边听边存"),
@@ -39,6 +42,9 @@ struct OtherView: View {
                     Image(systemName: item.leadIcon)
                     Text(item.title)
                     Spacer()
+                    if item.isSwitch ?? false {
+                        Toggle("", isOn: $showDiffModel)
+                    }
                     FontIcon.text(.materialIcon(code: .chevron_right))
                 }
                 .frame(height: 40)

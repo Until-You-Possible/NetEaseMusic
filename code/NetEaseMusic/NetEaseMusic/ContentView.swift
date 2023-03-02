@@ -62,9 +62,9 @@ struct ContentView: View {
 
                     }
                     .padding(.leading, 16)
-
                 }
             }
+            .frame(width: .infinity)
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarLeading) {
 //                    Button {
