@@ -13,6 +13,9 @@ struct ExploreView: View {
         VStack {
             // MARK: top search/scan/voice recognition fuctions
             HStack() {
+                HStack(alignment: .center) {
+                    Text("ddd")
+                }
                 // MARK: search wrapper
                 HStack () {
                     // spoltlight
@@ -21,18 +24,43 @@ struct ExploreView: View {
                     FontIcon.text(.materialIcon(code: .flip))
                 }
                 .background(Color(hex: "#f2f2f2"))
-                .padding(.leading, 80)
-                Spacer()
+                .frame(width: 320)
+                .padding(.bottom, 10)
                 
-                FontIcon.text(.materialIcon(code: .mic_none))
+                HStack {
+                    FontIcon.text(.materialIcon(code: .mic_none))
+                }
             }
             .background(Color.red)
             
-            
+            // MARK: scroll view
             ScrollView {
                 VStack {
                     HStack { Spacer() }
-                    Text("content")
+                    
+                    // MARK: Banner view
+                    BannerSlideView()
+                    Divider()
+                        .background(Color.black)
+                    // MARK: Entry slide view
+                    EntrySlideView()
+                    
+                    Divider()
+                        .background(Color.black)
+                    // MARK: Recommendation view
+                    RecommendationView()
+
+                    Divider()
+                        .background(Color.black)
+                    // MARK: why recommendation
+                    WhyRecommendataionView()
+                    Divider()
+                        .background(Color.black)
+                    
+                    
+
+                    Divider()
+                        .background(Color.black)
                 }
             }
             .background(Color.blue)
