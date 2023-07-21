@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71E938312A6A9E1C00A8B004 /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274F8293DD653008B669E /* FollowView.swift */; };
 		AA0E94E0295F15C3005F1979 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94DF295F15C3005F1979 /* SideMenuViewModel.swift */; };
 		AA0E94E2295F15D0005F1979 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94E1295F15D0005F1979 /* SideMenuView.swift */; };
 		AA0E94E729612B48005F1979 /* MessageCentralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E94E629612B48005F1979 /* MessageCentralView.swift */; };
@@ -29,7 +30,6 @@
 		AA7274EB293BBEE1008B669E /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274EA293BBEE1008B669E /* HexColor.swift */; };
 		AA7274EF293DD449008B669E /* AccountSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274EE293DD449008B669E /* AccountSet.swift */; };
 		AA7274F7293DD63B008B669E /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274F6293DD63B008B669E /* CommunityView.swift */; };
-		AA7274F9293DD653008B669E /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274F8293DD653008B669E /* FollowView.swift */; };
 		AA7274FB293DD66C008B669E /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274FA293DD66C008B669E /* MineView.swift */; };
 		AA7274FD293DD6E5008B669E /* BodCastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274FC293DD6E5008B669E /* BodCastView.swift */; };
 		AA7274FF293DD6F3008B669E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7274FE293DD6F3008B669E /* ExploreView.swift */; };
@@ -435,7 +435,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					AA7274C9293BABC0008B669E = {
 						CreatedOnToolsVersion = 14.1;
@@ -490,12 +490,12 @@
 				AA7274FF293DD6F3008B669E /* ExploreView.swift in Sources */,
 				AA7274EB293BBEE1008B669E /* HexColor.swift in Sources */,
 				AADCB90429B18F250055E1A9 /* PlayerBarView.swift in Sources */,
-				AA7274F9293DD653008B669E /* FollowView.swift in Sources */,
 				AA7274D0293BABC0008B669E /* ContentView.swift in Sources */,
 				AA23757A294771330001F8DB /* InputPasswordView.swift in Sources */,
 				AAEC0515293F883700B6A089 /* UserBasicAccountType.swift in Sources */,
 				AADCB8F829AE01AB0055E1A9 /* PersonalInfoView.swift in Sources */,
 				AA0E94E929612B64005F1979 /* MusicServiceView.swift in Sources */,
+				71E938312A6A9E1C00A8B004 /* FollowView.swift in Sources */,
 				AA0E94E729612B48005F1979 /* MessageCentralView.swift in Sources */,
 				AA7274FB293DD66C008B669E /* MineView.swift in Sources */,
 				AADCB8FD29B18CF00055E1A9 /* EntrySlideView.swift in Sources */,
@@ -557,6 +557,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -615,6 +616,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -641,6 +643,7 @@
 				CODE_SIGN_ENTITLEMENTS = NetEaseMusic/NetEaseMusic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NetEaseMusic/Preview Content\"";
 				DEVELOPMENT_TEAM = 483MCABWQ8;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -664,7 +667,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanggang.NetEaseMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -679,6 +684,7 @@
 				CODE_SIGN_ENTITLEMENTS = NetEaseMusic/NetEaseMusic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NetEaseMusic/Preview Content\"";
 				DEVELOPMENT_TEAM = 483MCABWQ8;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -702,7 +708,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanggang.NetEaseMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

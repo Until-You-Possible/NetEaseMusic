@@ -12,7 +12,7 @@ struct ContentView: View {
     
     // the sidebar should be displayed here
     
-    @State private var isLogin = true
+    @State private var isLogin = false
     @State private var isShowSideMenu = false
     
     var body: some View {

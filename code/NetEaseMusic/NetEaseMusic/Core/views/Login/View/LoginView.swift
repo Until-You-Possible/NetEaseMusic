@@ -99,12 +99,13 @@ struct LoginView: View {
                     // use phone number to login directly
                     print("login with phone")
                 } label: {
-                    Text("一键登录")
+                    Text("一键登录1")
                         .font(.system(size: 20))
                         .foregroundColor(.white)
                         .frame(width: 320, height: 50)
                         .background(Color(hex: "#e75549"))
                         .clipShape(Capsule())
+                        .buttonStyle(CustomButtonStyle())
                 }
                 .overlay {
                     Text("推荐")
@@ -228,6 +229,15 @@ struct LoginView: View {
             }
 
         }
+    }
+}
+
+struct CustomButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.white)
+            .background(configuration.isPressed ? Color(hex: "#e75549").opacity(0.8) : Color(hex: "#e75549"))
+            .clipShape(Capsule())
     }
 }
 
