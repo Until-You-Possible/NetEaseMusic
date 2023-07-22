@@ -20,6 +20,7 @@ struct LoginView: View {
     @State var showTipsMessage = false
     @State var confirmationDialog = false
     @State var navigationPrivacy = false
+    @GestureState private var isPressed = false
     
     // differrnet login type icon
     
@@ -93,20 +94,22 @@ struct LoginView: View {
                 }
                 .padding([.top], 110)
                 .padding([.leading], 26)
+            
                 
                 // MARK: main button of login
                 Button {
                     // use phone number to login directly
                     print("login with phone")
                 } label: {
-                    Text("一键登录1")
+                    Text("一键登录")
                         .font(.system(size: 20))
                         .foregroundColor(.white)
                         .frame(width: 320, height: 50)
                         .background(Color(hex: "#e75549"))
                         .clipShape(Capsule())
-                        .buttonStyle(CustomButtonStyle())
+                    
                 }
+                .buttonStyle(PlainButtonStyle())
                 .overlay {
                     Text("推荐")
                         .font(.system(size: 10))
@@ -159,6 +162,8 @@ struct LoginView: View {
                                 .frame(width: 40, height: 40)
                         }
                 }
+                .buttonStyle(PlainButtonStyle())
+                
                 Button {
                     
                 } label: {
@@ -172,6 +177,7 @@ struct LoginView: View {
                                 .frame(width: 40, height: 40)
                         }
                 }
+                .buttonStyle(PlainButtonStyle())
                 Button {
                     
                 } label: {
@@ -185,6 +191,7 @@ struct LoginView: View {
                                 .frame(width: 40, height: 40)
                         }
                 }
+                .buttonStyle(PlainButtonStyle())
                 Button {
                     
                 } label: {
@@ -198,6 +205,7 @@ struct LoginView: View {
                                 .frame(width: 40, height: 40)
                         }
                 }
+                .buttonStyle(PlainButtonStyle())
             }
             
             HStack {
