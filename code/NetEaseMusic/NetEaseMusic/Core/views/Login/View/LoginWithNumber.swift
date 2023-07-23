@@ -18,7 +18,9 @@ struct LoginWithNumber: View {
     // password: current page is the which need to login with user's password
     @State var currentPageState = "code"
     @State var countDown = 10
-    @State var phoneCode01 = "0"
+    private let codeLength = 4 // 短信验证码的长度
+    @State private var phoneCodes: [String] = ["1", "2", "3", "4"]
+    @FocusState private var focusedField: Int? // Track the focused input box
     
     var viewModel = LoginWithNumberViewModel()
 
@@ -190,20 +192,17 @@ struct LoginWithNumber: View {
                     .padding([.leading, .trailing], 20)
                     
                     // input the phone code
-                    HStack(alignment: .center) {
+                    HStack(spacing: 16){
                         Spacer()
-                        TextField("code", text: $phoneCode01)
-                            .frame(width: 60, height: 60, alignment: .center)
-                            .border(.gray, width: 1)
-                        TextField("code", text: $phoneCode01)
-                            .frame(width: 60, height: 60)
-                            .border(.gray, width: 1)
-                        TextField("code", text: $phoneCode01)
-                            .frame(width: 60, height: 60)
-                            .border(.gray, width: 1)
-                        TextField("code", text: $phoneCode01)
-                            .frame(width: 60, height: 60)
-                            .border(.gray, width: 1)
+                        ForEach(0..<codeLength, id: \.self) { index in
+                            TextField("", text: $phoneCodes[index])
+                                .font(.title)
+                                .frame(width: 50, height: 50)
+                                .multilineTextAlignment(.center)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .focused($focusedField, equals: index) // Set focus on the input box with the same index
+                        }
                         Spacer()
                     }
                     

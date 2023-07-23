@@ -8,54 +8,30 @@
 import SwiftUI
 
 struct BodCastView: View {
+    
+    private let codeLength = 4 // 短信验证码的长度
+//    @State private var code: String = "2468"
+    @State private var codes: [String] = ["1", "2", "3", "4"]
+    @FocusState private var focusedField: Int? // Track the focused input box
+    
     var body: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 0, style: .continuous)
-                .frame(width: 200, height: 100)
-        
+        HStack(spacing: 16) {
+            ForEach(0..<codeLength, id: \.self) { index in
+                TextField("", text: $codes[index])
+                    .font(.title)
+                    .frame(width: 40, height: 40)
+                    .multilineTextAlignment(.center)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .focused($focusedField, equals: index) // Set focus on the input box with the same index
+            }
         }
+        .padding()
     }
+    
 }
 
 
-
-// Extension to set corner radii individually
-//extension View {
-//    func cornerRadius(topLeft: CGFloat, bottomRight: CGFloat) -> some View {
-//        clipShape(ShapeWithCorners(topLeft: topLeft, bottomRight: bottomRight))
-//    }
-//}
-
-// Custom Shape to apply corner radii individually
-struct CustomRectangle: Shape {
-    let cornerRadius: CGFloat = 20
-
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        let topRight = CGPoint(x: rect.maxX, y: 0)
-        _ = CGPoint(x: 0, y: rect.maxY)
-        let bottomRight = CGPoint(x: rect.maxX, y: rect.maxY)
-
-        path.move(to: topRight)
-        path.addLine(to: CGPoint(x: rect.midX + cornerRadius, y: rect.maxY))
-        path.addLine(to: bottomRight)
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY + cornerRadius))
-
-        path.addArc(center: CGPoint(x: rect.maxX - cornerRadius, y: rect.maxY - cornerRadius),
-                    radius: cornerRadius,
-                    startAngle: Angle(degrees: 0),
-                    endAngle: Angle(degrees: 90),
-                    clockwise: false)
-
-        path.addArc(center: CGPoint(x: rect.minX + cornerRadius, y: rect.maxY - cornerRadius),
-                    radius: cornerRadius,
-                    startAngle: Angle(degrees: 90),
-                    endAngle: Angle(degrees: 180),
-                    clockwise: false)
-
-        return path
-    }
-}
 
 
 

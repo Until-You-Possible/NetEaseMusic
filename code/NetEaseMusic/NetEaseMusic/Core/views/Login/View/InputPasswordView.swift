@@ -34,6 +34,7 @@ struct InputPasswordView: View {
                             }
                         }
                 }
+                .buttonStyle(PlainButtonStyle())
                 .padding(.top, 40)
                 .alert("密码不能为空", isPresented: $isShowAlert) {
                     Button("ok", role: .cancel) {}
