@@ -222,18 +222,6 @@ struct LoginView: View {
                     Button("其他问题") {}
                     
                 }
-//                .sheet(isPresented: $showTipsMessage) {
-//                    VStack {
-//                         Image(systemName: "smiley")
-//                             .resizable()
-//                             .scaledToFit()
-//                             .frame(height: 68)
-//
-//                         Text("I'm modal sheet with multiple sizes!")
-//                             .padding(.top)
-//                     }
-//                    .presentationDetents([.height(200)])
-//                }
             }
 
         }

@@ -49,20 +49,20 @@ struct ContentView: View {
                     .background(isShowSideMenu ? Color.white : Color.clear)
                     .offset(x: isShowSideMenu ? 0: -300, y: 0)
                 
-                if isShowSideMenu == false && isLogin {
-                    Button {
-                        // to show the sidebar
-                        withAnimation(.easeInOut) {
-                            self.isShowSideMenu = true
-                        }
-                    } label: {
-                        Image(systemName: "sidebar.left")
-                            .foregroundColor(.black)
-                            .font(.system(size: 24))
-
-                    }
-                    .padding(.leading, 16)
-                }
+//                if isShowSideMenu == false && isLogin {
+//                    Button {
+//                        // to show the sidebar
+//                        withAnimation(.easeInOut) {
+//                            self.isShowSideMenu = true
+//                        }
+//                    } label: {
+//                        Image(systemName: "sidebar.left")
+//                            .foregroundColor(.black)
+//                            .font(.system(size: 24))
+//
+//                    }
+//                    .padding(.leading, 16)
+//                }
             }
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarLeading) {

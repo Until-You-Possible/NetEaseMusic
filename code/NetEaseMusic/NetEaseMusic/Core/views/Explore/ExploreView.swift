@@ -10,28 +10,55 @@ import SwiftUIFontIcon
 
 struct ExploreView: View {
     var body: some View {
+        
+        
         VStack (spacing: 0) {
             // MARK: top search/scan/voice recognition fuctions
-            HStack() {
-                HStack(alignment: .center) {
-                    Spacer()
+            VStack (alignment: .leading) {
+                HStack(spacing: 24) {
+                    Button {
+                        print("show the left menu")
+                    } label: {
+                        FontIcon.text(.materialIcon(code: .menu), fontsize: 26)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .foregroundColor(.black)
+                    
+                    // MARK: search wrapper
+                    Button(action: {
+                        print("action button")
+                        
+                    }) {
+                        ZStack () {
+                            RoundedRectangle (cornerRadius: 60)
+                                .frame(width: 260, height: 40)
+                                .foregroundColor(Color(hex: "#dfd4f6"))
+                            HStack (spacing: 16) {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(Color(hex: "#8783a2"))
+                                Text("until-you-possible")
+                                    .frame(width: 160)
+                                    .foregroundColor(Color(hex: "#8783a2"))
+                                FontIcon.text(.materialIcon(code: .flip))
+                                    .foregroundColor(Color(hex: "#8783a2"))
+                            }
+
+                        }
+                        .frame(width: 260, height: 40)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    HStack (alignment: .center) {
+                        FontIcon.text(.materialIcon(code: .mic_none), fontsize: 26)
+                    }
                 }
-                // MARK: search wrapper
-                HStack () {
-                    // spoltlight
-                    Image(systemName: "magnifyingglass")
-                    Text("dynamic message.....")
-                    FontIcon.text(.materialIcon(code: .flip))
-                }
-                .background(Color(hex: "#f2f2f2"))
-                .frame(width: 260, height: 40)
-                .padding(.bottom, 10)
-                Spacer()
-                HStack {
-                    FontIcon.text(.materialIcon(code: .mic_none))
-                }
+                .frame(maxWidth: .infinity)
+                
             }
-            .background(Color.red)
+            .frame(maxWidth: .infinity)
+                .background(
+                    LinearGradient(gradient: Gradient(colors: [Color(hex: "#dfdef6"), Color(hex: "#f0e0f2")]), startPoint: .leading, endPoint: .trailing)
+                )
             
             // MARK: scroll view
             ScrollView {
@@ -60,8 +87,9 @@ struct ExploreView: View {
                         .background(Color.black)
                 }
             }
-            .background(Color.blue)
+            .background(Color(hex: "#f5f7fb"))
         }
+
     }
 }
 
