@@ -10,11 +10,11 @@ import SwiftUIFontIcon
 
 struct ExploreView: View {
     var body: some View {
-        VStack {
+        VStack (spacing: 0) {
             // MARK: top search/scan/voice recognition fuctions
             HStack() {
                 HStack(alignment: .center) {
-                    Text("ddd")
+                    Spacer()
                 }
                 // MARK: search wrapper
                 HStack () {
@@ -24,9 +24,9 @@ struct ExploreView: View {
                     FontIcon.text(.materialIcon(code: .flip))
                 }
                 .background(Color(hex: "#f2f2f2"))
-                .frame(width: 320)
+                .frame(width: 260, height: 40)
                 .padding(.bottom, 10)
-                
+                Spacer()
                 HStack {
                     FontIcon.text(.materialIcon(code: .mic_none))
                 }
@@ -37,7 +37,6 @@ struct ExploreView: View {
             ScrollView {
                 VStack {
                     HStack { Spacer() }
-                    
                     // MARK: Banner view
                     BannerSlideView()
                     Divider()
@@ -57,17 +56,12 @@ struct ExploreView: View {
                     Divider()
                         .background(Color.black)
                     
-                    
-
                     Divider()
                         .background(Color.black)
                 }
             }
             .background(Color.blue)
-            
         }
-
-        
     }
 }
 

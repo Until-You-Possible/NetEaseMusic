@@ -12,7 +12,7 @@ struct ContentView: View {
     
     // the sidebar should be displayed here
     
-    @State private var isLogin = false
+    @State private var isLogin = true
     @State private var isShowSideMenu = false
     
     var body: some View {
@@ -49,7 +49,7 @@ struct ContentView: View {
                     .background(isShowSideMenu ? Color.white : Color.clear)
                     .offset(x: isShowSideMenu ? 0: -300, y: 0)
                 
-                if isShowSideMenu == false {
+                if isShowSideMenu == false && isLogin {
                     Button {
                         // to show the sidebar
                         withAnimation(.easeInOut) {
@@ -64,7 +64,6 @@ struct ContentView: View {
                     .padding(.leading, 16)
                 }
             }
-            .frame(width: .infinity)
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarLeading) {
 //                    Button {
