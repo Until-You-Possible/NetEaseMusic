@@ -32,6 +32,8 @@ struct BodCastView: View {
     @State private var currentPage = 0
     private let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     @State private var isAutoScrolling = true
+    // 示例图片名称数组
+    let imageNames = ["https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b00e0e5a0369461994f78c183b2123ca~tplv-k3u1fbpfcp-watermark.image?", "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b00e0e5a0369461994f78c183b2123ca~tplv-k3u1fbpfcp-watermark.image?", "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b00e0e5a0369461994f78c183b2123ca~tplv-k3u1fbpfcp-watermark.image?", "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b00e0e5a0369461994f78c183b2123ca~tplv-k3u1fbpfcp-watermark.image?"]
 
     var body: some View {
         TabView(selection: $currentPage) {
@@ -47,6 +49,7 @@ struct BodCastView: View {
                 }
             }
         }
+        .frame(width: .infinity, height: 200)
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .onReceive(timer) { _ in
@@ -67,8 +70,7 @@ struct BodCastView: View {
                 }
         )
     }
-    // 示例图片名称数组
-    let imageNames = ["https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b00e0e5a0369461994f78c183b2123ca~tplv-k3u1fbpfcp-watermark.image?", "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b00e0e5a0369461994f78c183b2123ca~tplv-k3u1fbpfcp-watermark.image?", "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b00e0e5a0369461994f78c183b2123ca~tplv-k3u1fbpfcp-watermark.image?", "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b00e0e5a0369461994f78c183b2123ca~tplv-k3u1fbpfcp-watermark.image?"]
+
     
 }
 

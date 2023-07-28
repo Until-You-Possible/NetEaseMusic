@@ -10,8 +10,7 @@ import SwiftUIFontIcon
 
 struct ExploreView: View {
     var body: some View {
-        
-        
+
         VStack (spacing: 0) {
             // MARK: top search/scan/voice recognition fuctions
             VStack (alignment: .leading) {
@@ -62,12 +61,10 @@ struct ExploreView: View {
             
             // MARK: scroll view
             ScrollView {
-                VStack {
+                VStack (spacing: 0) {
                     HStack { Spacer() }
                     // MARK: Banner view
                     BannerSlideView()
-                    Divider()
-                        .background(Color.black)
                     // MARK: Entry slide view
                     EntrySlideView()
                     
@@ -86,6 +83,7 @@ struct ExploreView: View {
                     Divider()
                         .background(Color.black)
                 }
+                .padding(.top, 10)
             }
             .background(Color(hex: "#f5f7fb"))
         }

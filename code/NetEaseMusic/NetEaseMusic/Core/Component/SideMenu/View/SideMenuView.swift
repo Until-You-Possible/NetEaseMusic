@@ -68,6 +68,7 @@ struct SideMenuView: View {
                 
                 Button {
                     // 登陆和退出按钮
+                    print("退出登陆")
                 } label: {
                     Text("退出登陆")
                         .foregroundColor(Color.red)
