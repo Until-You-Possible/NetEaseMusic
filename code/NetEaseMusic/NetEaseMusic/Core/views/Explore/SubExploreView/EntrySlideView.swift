@@ -8,6 +8,12 @@
 import SwiftUI
 import SwiftUIFontIcon
 
+struct EntryType: Identifiable, Hashable {
+    var id = UUID()
+    var code: SwiftUIFontIcon.MaterialIconCode
+    var text: String
+}
+
 struct EntrySlideView: View {
     @State private var currentPage = 0
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
@@ -15,43 +21,32 @@ struct EntrySlideView: View {
     // 示例图片名称数组
     let imageNames = ["https://p1.music.126.net/GW6DbEFpmUQ4IZLWARO-RA==/109951168769739666.jpg?imageView&quality=89", "https://p1.music.126.net/tyXgxJdsg9_qlOAmt1KUhQ==/109951168769746278.jpg?imageView&quality=89"]
     
+    let entryList: [EntryType] = [
+        EntryType(code: .today, text: "每日推荐"),
+        EntryType(code: .radio, text: "私人漫游"),
+        EntryType(code: .polymer, text: "歌单"),
+        EntryType(code: .playlist_add_check, text: "排行榜"),
+        EntryType(code: .tv, text: "直播")
+    ]
+    
     var body: some View {
         
         TabView(selection: $currentPage) {
             ForEach(0..<imageNames.count, id: \.self) { index in
                 HStack () {
-                    VStack (spacing: 8) {
-                        FontIcon.text(.materialIcon(code: .today), fontsize: 30, color: .red)
-                        Text("每日推荐")
-                            .font(.system(size: 12))
-                    }
-                    Spacer()
-                        .frame(width: 30)
-                    VStack (spacing: 8) {
-                        FontIcon.text(.materialIcon(code: .radio), fontsize: 30, color: .red)
-                        Text("私人漫游")
-                            .font(.system(size: 12))
-                    }
-                    Spacer()
-                        .frame(width: 30)
-                    VStack (spacing: 8) {
-                        FontIcon.text(.materialIcon(code: .polymer), fontsize: 30, color: .red)
-                        Text("歌单")
-                            .font(.system(size: 12))
-                    }
-                    Spacer()
-                        .frame(width: 30)
-                    VStack (spacing: 8) {
-                        FontIcon.text(.materialIcon(code: .playlist_add_check), fontsize: 30, color: .red)
-                        Text("排行榜")
-                            .font(.system(size: 12))
-                    }
-                    Spacer()
-                        .frame(width: 30)
-                    VStack (spacing: 8) {
-                        FontIcon.text(.materialIcon(code: .tv), fontsize: 30, color: .red)
-                        Text("直播")
-                            .font(.system(size: 12))
+                    
+                    ForEach(entryList.indices, id: \.self) { index in
+                        let entry = entryList[index]
+                        if index != 0 && index != 5 {
+                            Spacer()
+                                .frame(width: 30)
+                        }
+                        VStack (spacing: 10) {
+                            FontIcon.text(.materialIcon(code: entry.code), fontsize: 30, color: .red)
+                            Text(entry.text)
+                                .font(.system(size: 12))
+
+                        }
                     }
                 }
             }
