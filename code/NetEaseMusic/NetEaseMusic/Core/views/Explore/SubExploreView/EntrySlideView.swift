@@ -18,8 +18,6 @@ struct EntrySlideView: View {
     @State private var currentPage = 0
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     @State private var isAutoScrolling = true
-    // 示例图片名称数组
-    let imageNames = ["https://p1.music.126.net/GW6DbEFpmUQ4IZLWARO-RA==/109951168769739666.jpg?imageView&quality=89", "https://p1.music.126.net/tyXgxJdsg9_qlOAmt1KUhQ==/109951168769746278.jpg?imageView&quality=89"]
     
     let entryList: [EntryType] = [
         EntryType(code: .today, text: "每日推荐"),
@@ -32,7 +30,7 @@ struct EntrySlideView: View {
     var body: some View {
         
         TabView(selection: $currentPage) {
-            ForEach(0..<imageNames.count, id: \.self) { index in
+            ForEach(0..<2, id: \.self) { index in
                 HStack () {
                     
                     ForEach(entryList.indices, id: \.self) { index in
@@ -55,7 +53,7 @@ struct EntrySlideView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
         .onReceive(timer) { _ in
-            let newIndex = (currentPage + 1) % imageNames.count
+            let newIndex = (currentPage + 1) % 2
             withAnimation {
                 currentPage = newIndex
             }

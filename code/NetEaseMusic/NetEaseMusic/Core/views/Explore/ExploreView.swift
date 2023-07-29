@@ -67,11 +67,9 @@ struct ExploreView: View {
                     BannerSlideView()
                     // MARK: Entry slide view
                     EntrySlideView()
-                    
-                    Divider()
-                        .background(Color.black)
                     // MARK: Recommendation view
                     RecommendationView()
+                        .padding([.leading, .top], 12)
 
                     Divider()
                         .background(Color.black)
