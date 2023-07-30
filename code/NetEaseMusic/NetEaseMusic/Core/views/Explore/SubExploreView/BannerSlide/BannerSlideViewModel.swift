@@ -70,7 +70,7 @@ class BannerSlideViewModle: ObservableObject {
         let url = "https://arthur-music-api.vercel.app/banner?type=2"
         dataRequestModel.fetchData(url: url) { ( data, error, isLoading) in
             print("Error:\(String(describing: error?.localizedDescription))")
-//            self.isLoading = isLoading
+            self.isLoading = isLoading 
 //            self.error = error
 //            print(type(of: data))
 //            self.bannerAllData = data
