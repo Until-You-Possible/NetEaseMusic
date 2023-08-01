@@ -7,15 +7,16 @@
 
 import Foundation
 import SwiftUI
+import SwiftyJSON
 
 
-class DataRequestViewModel<T: Decodable>: ObservableObject {
+class DataRequestViewModel: ObservableObject {
     
-    @Published var responseData: T? // Response data will be stored here
+    @Published var responseData: JSON? // Response data will be stored here
     @Published var isLoading = false // To track loading state
     @Published var error: Error? // To track any errors during the request
 
-    func fetchData(url: String, completion:  @escaping(T?, Error?, Bool) -> Void) {
+    func fetchData(url: String, completion:  @escaping(JSON?, Error?, Bool) -> Void) {
         // Set isLoading to true before making the request
         
         isLoading = true
@@ -40,18 +41,14 @@ class DataRequestViewModel<T: Decodable>: ObservableObject {
 
             // Parse the data into JSON using JSONSerialization
             do {
-                let decoder = JSONDecoder()
-                let responseData = try decoder.decode(T.self, from: data)
-                print("qqq", data)
+                let responseData = try JSON(data: data)
                 DispatchQueue.main.async {
                     self.isLoading = false
-                    print("dataRequest file", responseData)
                     completion(responseData, nil, false)
                 }
             } catch {
                 DispatchQueue.main.async {
                     self.isLoading = false
-                    print("xxxxxx", error)
                     completion(nil, error, false)
                 }
             }
