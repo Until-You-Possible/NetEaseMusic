@@ -20,6 +20,7 @@ struct BannerSlideView: View {
                 ForEach(0..<banners.count, id: \.self) { index in
                     let banner = banners[index]
                     if let picURLString = banner["pic"].string,
+                       let typeTitle = banner["typeTitle"].string,
                        let picURL = URL(string: picURLString) {
                         AsyncImage(url: picURL) { image in
                             image
@@ -27,9 +28,23 @@ struct BannerSlideView: View {
                                 .frame(width: 370)
                                 .scaledToFit()
                                 .cornerRadius(10)
+                                .overlay(
+                                    Text(typeTitle)
+                                        .frame(height: 16)
+                                        .padding([.leading, .trailing], 6)
+                                        .font(.system(size: 8))
+                                        .foregroundColor(.black)
+                                        .background(Color.white)
+                                        .cornerRadius(10)
+                                        .offset(
+                                            x: -10,
+                                            y: -10
+                                        ),
+                                    alignment: .bottomTrailing
+                                )
                         } placeholder: {
                             // Placeholder image while loading
-                            Color.gray
+                            ProgressView()
                         }
                     }
 
@@ -59,8 +74,8 @@ struct BannerSlideView: View {
             )
         } else {
             // 当没有数据时，显示默认的视图（例如一张默认图片或者加载指示器）
-            Color.gray
-                .frame(width: 370, height: 160)
+            ProgressView()
+                .frame(height: 160)
         }
     }
 }

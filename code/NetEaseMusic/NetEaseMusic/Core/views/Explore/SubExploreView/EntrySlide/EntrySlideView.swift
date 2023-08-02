@@ -15,6 +15,7 @@ struct EntryType: Identifiable, Hashable {
 }
 
 struct EntrySlideView: View {
+    
     @State private var currentPage = 0
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     @State private var isAutoScrolling = true
