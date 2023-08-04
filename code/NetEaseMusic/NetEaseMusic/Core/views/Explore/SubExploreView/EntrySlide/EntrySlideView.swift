@@ -19,57 +19,49 @@ struct EntrySlideView: View {
     @State private var currentPage = 0
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     @State private var isAutoScrolling = true
-    
-    let entryList: [EntryType] = [
-        EntryType(code: .today, text: "每日推荐"),
-        EntryType(code: .radio, text: "私人漫游"),
-        EntryType(code: .polymer, text: "歌单"),
-        EntryType(code: .playlist_add_check, text: "排行榜"),
-        EntryType(code: .tv, text: "直播")
-    ]
+    @ObservedObject var entrySildeViewModel = EntrySlideViewModel()
     
     var body: some View {
         
-        TabView(selection: $currentPage) {
-            ForEach(0..<2, id: \.self) { index in
-                HStack () {
-                    
-                    ForEach(entryList.indices, id: \.self) { index in
-                        let entry = entryList[index]
-                        if index != 0 && index != 5 {
-                            Spacer()
-                                .frame(width: 30)
-                        }
-                        VStack (spacing: 10) {
-                            FontIcon.text(.materialIcon(code: entry.code), fontsize: 30, color: .red)
-                            Text(entry.text)
-                                .font(.system(size: 12))
-
-                        }
+        if let entryList = entrySildeViewModel.entryArray {
+            TabView(selection: $currentPage) {
+                ForEach(entryList.indices, id: \.self) { index in
+                     let current = entryList[index]
+                     HStack {
+                         ForEach(0..<current.count, id: \.self) { innerIndex in
+                             let innerCurrent = current[innerIndex]
+                             VStack {
+                                 Text(innerCurrent["name"].stringValue)
+                             }
+                         }
+                     }
+                 }
+            }
+            .frame(width: .infinity, height: 80)
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
+            .onReceive(timer) { _ in
+                let newIndex = (currentPage + 1) % 2
+                withAnimation {
+                    currentPage = newIndex
+                }
+            }
+            .gesture(
+                DragGesture()
+                    .onChanged { _ in
+                        // 用户手动滑动时暂停自动轮播
+                        isAutoScrolling = false
                     }
-                }
-            }
+                    .onEnded { _ in
+                        // 用户停止滑动后继续自动轮播
+                        isAutoScrolling = true
+                    }
+            )
+        } else {
+            ProgressView()
         }
-        .frame(width: .infinity, height: 80)
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
-        .onReceive(timer) { _ in
-            let newIndex = (currentPage + 1) % 2
-            withAnimation {
-                currentPage = newIndex
-            }
-        }
-        .gesture(
-            DragGesture()
-                .onChanged { _ in
-                    // 用户手动滑动时暂停自动轮播
-                    isAutoScrolling = false
-                }
-                .onEnded { _ in
-                    // 用户停止滑动后继续自动轮播
-                    isAutoScrolling = true
-                }
-        )
+        
+
     }
 }
 
