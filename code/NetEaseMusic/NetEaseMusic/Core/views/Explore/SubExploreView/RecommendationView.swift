@@ -47,6 +47,25 @@ struct RecommendationView: View {
                                     .frame(width: 140, height: 140)
                                     .cornerRadius(10)
                             }
+                            .overlay (
+                                FontIcon.text(.materialIcon(code: .play_circle_filled),
+                                              fontsize: 26, color: Color.gray)
+                                .offset(x: -10, y: -10),
+                                alignment: .bottomTrailing
+                            )
+                            .overlay (
+                                HStack {
+                                    Text("456万")
+                                        .foregroundColor(Color.white)
+                                        .font(.system(size: 12))
+                                        .offset(
+                                            x: -10,
+                                            y: 10
+                                        )
+                                },
+                                alignment: .topTrailing
+                            )
+                            
                             Text(current.infoText)
                                 .font(.system(size: 12))
                                 .lineLimit(2)
