@@ -8,18 +8,26 @@
 import Foundation
 import SwiftyJSON
 
-
+struct MenuItem: Identifiable {
+    var id: Int
+    var name: String
+    var iconUrl: String
+    var url: String
+    var skinSupport: Bool
+    var homepageMode: String
+    var resourceState: String?
+}
 
 class EntrySlideViewModel: ObservableObject {
-     
+    
     @Published var dataRequestModel = DataRequestViewModel()
-    @Published var entryData     : JSON?
     @Published var isLoading     : Bool = true
     @Published var error         : Error?
     @Published var calculatePage : Int = 0
-    @Published var entryArray    : [[Any]] = []
+    @Published var entryChunksArray = []
     
     init () {
+        print("init")
         self.getEntrySlide()
     }
     
@@ -27,24 +35,43 @@ class EntrySlideViewModel: ObservableObject {
         let url = "https://arthur-music-api.vercel.app/homepage/dragon/ball"
         dataRequestModel.fetchData(url: url) { (data, error, isLoading) in
             if let data = data {
-                self.entryData = data
-                self.calculatePage = Int(ceil(Double(data["data"].count ) / Double(5)))
+                self.calculatePage = Int(ceil(Double(data["data"].count) / Double(5)))
                 // 转换接口数据
-                let entryArray = self.splitArrayIntoChunks(data["data"].array ?? [], chunkSize: 5)
-                print("entryArray", type(of: entryArray))
+                self.entryChunksArray = data["data"].arrayValue
+                print("self.entryChunksArray0", self.entryChunksArray)
+                print("self.entryChunksArray1", self.entryChunksArray)
             }
             self.isLoading = isLoading
             self.error = error
+            
         }
-    }
+        
+        func splitArrayIntoChunks<T>(array: [T], chunkSize: Int) -> [[T]] {
+            var resultArray: [[T]] = []
+            for i in stride(from: 0, to: array.count, by: chunkSize) {
+                let endIndex = min(i + chunkSize, array.count)
+                let chunk = Array(array[i..<endIndex])
+                resultArray.append(chunk)
+            }
+            return resultArray
+        }
+        
+        func splitArrayByChunks<T>(array: [T], chunkSize: Int) -> [[T]] {
+            var resultArray: [[T]] = []
+            var currentSubArray: [T] = []
+            for value in array {
+                if currentSubArray.count == 5 {
+                    resultArray.append(currentSubArray)
+                    currentSubArray = []
+                }
+                currentSubArray.append(value)
+            }
 
-    func splitArrayIntoChunks<T>(_ array: [T], chunkSize: Int) -> [[T]] {
-        var resultArray: [[T]] = []
-        for i in stride(from: 0, to: array.count, by: chunkSize) {
-            let endIndex = min(i + chunkSize, array.count)
-            let chunk = Array(array[i..<endIndex])
-            resultArray.append(chunk)
+            // 添加最后一个子数组（可能不足5个元素）
+            if !currentSubArray.isEmpty {
+                resultArray.append(currentSubArray)
+            }
+            return resultArray
         }
-        return resultArray
     }
 }
