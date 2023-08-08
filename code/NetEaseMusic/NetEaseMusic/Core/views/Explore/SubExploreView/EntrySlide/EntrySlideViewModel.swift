@@ -24,10 +24,9 @@ class EntrySlideViewModel: ObservableObject {
     @Published var isLoading     : Bool = true
     @Published var error         : Error?
     @Published var calculatePage : Int = 0
-    @Published var entryChunksArray = []
+    @Published var entryData     : JSON?
     
     init () {
-        print("init")
         self.getEntrySlide()
     }
     
@@ -37,15 +36,20 @@ class EntrySlideViewModel: ObservableObject {
             if let data = data {
                 self.calculatePage = Int(ceil(Double(data["data"].count) / Double(5)))
                 // 转换接口数据
-                self.entryChunksArray = data["data"].arrayValue
-                print("self.entryChunksArray0", self.entryChunksArray)
-                print("self.entryChunksArray1", self.entryChunksArray)
+                self.entryData = data
             }
             self.isLoading = isLoading
             self.error = error
             
         }
         
+        func getTodayDate() -> Int {
+            let today = Date()
+            let calendar = Calendar.current
+            let day = calendar.component(.day, from: today)
+            return day
+        }
+         
         func splitArrayIntoChunks<T>(array: [T], chunkSize: Int) -> [[T]] {
             var resultArray: [[T]] = []
             for i in stride(from: 0, to: array.count, by: chunkSize) {

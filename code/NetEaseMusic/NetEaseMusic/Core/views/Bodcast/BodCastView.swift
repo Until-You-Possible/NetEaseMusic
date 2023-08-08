@@ -10,13 +10,11 @@ import SwiftUI
 
 struct BodCastView: View {
     
+    @ObservedObject var viewModel = EntrySlideViewModel()
+    
     var body: some View {
-        Text("Middle View")
-            .frame(height: 30)
-            .cornerRadius(10)
-            .padding([.leading, .trailing], 10)
-            .background(Color.green)
 
+        Text("text")
     }
 
 }
