@@ -23,7 +23,13 @@ struct EntrySlideView: View {
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     @State private var isAutoScrolling = true
     
+
+    
     var body: some View {
+        
+        let today = Date()
+        let calendar = Calendar.current
+        let day = calendar.component(.day, from: today)
         
         if let entryChunkArray = entrySildeViewModel.entryData?["data"].array {
             let slicedArrayPrefix = entryChunkArray.prefix(5)
@@ -47,11 +53,10 @@ struct EntrySlideView: View {
                                                    .overlay {
                                                        Group {
                                                            if currentID == -1 {
-                                                               Text("8")
+                                                               Text("\(day)")
                                                                    .foregroundColor(.white)
                                                                    .font(.system(size: 14))
                                                                    .offset(x: 0, y: 2)
-//                                                               Text("Today's Date: \(entrySildeViewModel.getTodayDate())")
                                                            }
                                                        }
                                                    }
@@ -59,6 +64,7 @@ struct EntrySlideView: View {
                                            } placeholder: {
                                                // Placeholder 视图
                                                ProgressView()
+                                                   .frame(height: 120)
                                            }
                                 }
 
