@@ -8,11 +8,24 @@
 import Foundation
 
 
+struct CodeAreaType: Decodable {
+    var name: String
+    var result: [CodeAreaItem]
+}
+
+struct CodeAreaItem: Decodable {
+    var english_name : String
+    var chinese_name : String
+    var country_code : String
+    var phone_code   : String
+}
+
+
 class LoginWithNumberViewModel: ObservableObject {
     
-    var districtList = [DistrictsRawData]()
+    var districtList = [CodeAreaItem]()
     var alphabets = [String]()
-    var dataDict: Dictionary<String, Array<DistrictsRawData>> = Dictionary()
+    var dataDict: Dictionary<String, Array<CodeAreaItem>> = Dictionary()
     @Published var userPhoneNumber = ""
     
     init () {
@@ -22,8 +35,8 @@ class LoginWithNumberViewModel: ObservableObject {
     }
     
     func getAreaCodeData() {
-        if let data = FileLoader.readLocalFile("Districts"){
-            let rawDistricts = FileLoader.loadJson(data)
+        if let data = FileLoader.readLocalFile(filename: "Districts"){
+            let rawDistricts: CodeAreaType = FileLoader.loadJsonSpec(data: data)
             self.districtList = rawDistricts.result
             self.getAllLetterFromAreaCodeData()
             self.modifiyDataIntoTwoDimensional()
@@ -55,7 +68,7 @@ class LoginWithNumberViewModel: ObservableObject {
     // deal with data according the letter we have
     // every letter have a corresponding the array
     func modifiyDataIntoTwoDimensional() {
-        var sameDataArray = [DistrictsRawData]()
+        var sameDataArray = [CodeAreaItem]()
         for letter in alphabets {
             for list in districtList {
                 if list.country_code.hasPrefix(letter) {

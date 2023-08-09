@@ -8,16 +8,6 @@
 import Foundation
 import SwiftyJSON
 
-struct MenuItem: Identifiable {
-    var id: Int
-    var name: String
-    var iconUrl: String
-    var url: String
-    var skinSupport: Bool
-    var homepageMode: String
-    var resourceState: String?
-}
-
 class EntrySlideViewModel: ObservableObject {
     
     @Published var dataRequestModel = DataRequestViewModel()
@@ -37,9 +27,9 @@ class EntrySlideViewModel: ObservableObject {
                 self.calculatePage = Int(ceil(Double(data["data"].count) / Double(5)))
                 // 转换接口数据
                 self.entryData = data
+                self.isLoading = isLoading
+                self.error = error
             }
-            self.isLoading = isLoading
-            self.error = error
             
         }
         

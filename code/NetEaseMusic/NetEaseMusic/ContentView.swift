@@ -20,11 +20,10 @@ struct ContentView: View {
         Group {
             
             ZStack(alignment: .topLeading) {
-                
                 if isLogin {
                      MainTabView()
                 } else {
-                    LoginView()
+
                 }
                 
                 //MARK: shadow for the sideMenu

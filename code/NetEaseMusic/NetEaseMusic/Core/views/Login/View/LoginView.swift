@@ -12,7 +12,7 @@ struct LoginView: View {
     
 //    private var loginViewModel: LoginViewModel
     
-    // private var viewModel = LoginViewModel()
+     private var viewModel = LoginViewModel()
     
     @Environment(\.presentationMode) var presentationMode
     

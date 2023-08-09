@@ -30,6 +30,7 @@ struct EntrySlideView: View {
         let today = Date()
         let calendar = Calendar.current
         let day = calendar.component(.day, from: today)
+        let currentItemID = ""
         
         if let entryChunkArray = entrySildeViewModel.entryData?["data"].array {
             let slicedArrayPrefix = entryChunkArray.prefix(5)
@@ -109,6 +110,7 @@ func destinationView(for currentID: Int) -> some View {
     switch currentID {
     case -1:
         DayRecommendSongView()
+            .navigationBarHidden(true)
     case -6:
         PrivateFMView()
     case -2:
@@ -129,6 +131,23 @@ func destinationView(for currentID: Int) -> some View {
         GameAreaView()
     default:
         ExploreView()
+    }
+}
+
+struct MyBackButton: View {
+    var label: String
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "arrow.left.circle")
+                Text(label)
+            }
+            .foregroundColor(.blue)
+        }
     }
 }
 
