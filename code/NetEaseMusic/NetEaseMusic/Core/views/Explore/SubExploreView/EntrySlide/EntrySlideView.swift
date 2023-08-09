@@ -41,35 +41,38 @@ struct EntrySlideView: View {
                     HStack {
                         ForEach(current.indices, id: \.self) { innerIndex in
                             let innerCurrent = current[innerIndex]
-                            let currentID = current[innerIndex]["id"]
-                            VStack () {
-                                HStack {
-                                    AsyncImage(url: URL(string: innerCurrent["iconUrl"].stringValue)) { image in
-                                               image
-                                                   .resizable()
-                                                   .colorMultiply(.red)
-                                                   .frame(width: 60, height: 60)
-                                                   .scaledToFit()
-                                                   .overlay {
-                                                       Group {
-                                                           if currentID == -1 {
-                                                               Text("\(day)")
-                                                                   .foregroundColor(.white)
-                                                                   .font(.system(size: 14))
-                                                                   .offset(x: 0, y: 2)
+                            let currentID = current[innerIndex]["id"].intValue
+                            NavigationLink (destination: destinationView(for: currentID)) {
+                                VStack () {
+                                    HStack {
+                                        AsyncImage(url: URL(string: innerCurrent["iconUrl"].stringValue)) { image in
+                                                   image
+                                                       .resizable()
+                                                       .colorMultiply(.red)
+                                                       .frame(width: 60, height: 60)
+                                                       .scaledToFit()
+                                                       .overlay {
+                                                           Group {
+                                                               if currentID == -1 {
+                                                                   Text("\(day)")
+                                                                       .foregroundColor(.white)
+                                                                       .font(.system(size: 14))
+                                                                       .offset(x: 0, y: 2)
+                                                               }
                                                            }
                                                        }
-                                                   }
 
-                                           } placeholder: {
-                                               // Placeholder 视图
-                                               ProgressView()
-                                                   .frame(height: 120)
-                                           }
+                                               } placeholder: {
+                                                   // Placeholder 视图
+                                                   ProgressView()
+                                                       .frame(height: 120)
+                                               }
+                                    }
+
+                                    Text(innerCurrent["name"].stringValue)
+                                        .font(.system(size: 12))
+                                        .foregroundColor(.black)
                                 }
-
-                                Text(innerCurrent["name"].stringValue)
-                                    .font(.system(size: 12))
                             }
                         }
                     }
@@ -98,9 +101,34 @@ struct EntrySlideView: View {
         } else {
             ProgressView()
         }
+    }
+}
 
-        
-    
+@ViewBuilder
+func destinationView(for currentID: Int) -> some View {
+    switch currentID {
+    case -1:
+        DayRecommendSongView()
+    case -6:
+        PrivateFMView()
+    case -2:
+        SongListView()
+    case -3:
+        SongChartsView()
+    case 1025001:
+        VoiceBookView()
+    case 13000:
+        NumberialAlbumView()
+    case 11000:
+        LiveBodcastView()
+    case 1025000:
+        FocusNewSongView()
+    case 1027000:
+        CollectorView()
+    case 18000:
+        GameAreaView()
+    default:
+        ExploreView()
     }
 }
 
