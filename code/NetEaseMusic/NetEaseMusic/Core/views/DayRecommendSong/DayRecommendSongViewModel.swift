@@ -10,17 +10,21 @@ import SwiftyJSON
 
 class DayRecommendSongViewModel: ObservableObject {
     
-    @Published var offset: CGFloat = 0
-    @Published var daySongs: JSON?
+    @Published var offset           : CGFloat = 0
+    @Published var daySongsData     : JSON?
+    @Published var dayListData      : JSON?
+    @Published var recommendReasons : JSON?
     
     init () {
         self.getDayRecommendSongData()
     }
     
     func getDayRecommendSongData () {
-        if let data = FileLoader.readLocalFile(filename: "RecommendSource") {
-//            let daySongs = FileLoader.loadJson(data: data)
-            print("data", data)
+        if let data = FileLoader.readLocalFile(filename: "RecommendSongs") {
+            self.daySongsData     = FileLoader.loadJson(data: data)
+            self.dayListData      = daySongsData?["data"]["dailySongs"]
+            print("dayListData", self.dayListData as Any)
+            self.recommendReasons = daySongsData?["data"]["recommendReasons"]
         }
     }
     

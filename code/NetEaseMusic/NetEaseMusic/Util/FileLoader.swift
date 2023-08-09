@@ -19,7 +19,6 @@ class FileLoader {
         }
         
         do {
-            print("file", file)
             return try String(contentsOfFile: file).data(using: .utf8)
         } catch {
             fatalError("Unable to load \"\(filename)\" from main bundle:\n\(error)")

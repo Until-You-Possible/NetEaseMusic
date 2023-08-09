@@ -12,10 +12,8 @@ struct DayRecommendSongView: View {
     
     @ObservedObject var dayRecommendSongViewModel  = DayRecommendSongViewModel()
 
-    
     var body: some View {
     
-        
         ScrollView {
 
             LazyVStack {
@@ -62,8 +60,64 @@ struct DayRecommendSongView: View {
                 .padding(.top)
                 .padding(.bottom)
                 
-                ForEach(0..<80) { index in
-                    Text("xxx")
+                if let dayList = dayRecommendSongViewModel.dayListData?.array {
+                    ForEach(dayList.indices, id: \.self) { index in
+                        let current = dayList[index]
+                        HStack () {
+                            let picURL = URL(string: current["al"]["picUrl"].stringValue)
+                            AsyncImage(url: picURL) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .cornerRadius(4)
+                            } placeholder: {
+                                ProgressView()
+                                    .frame(width: 40, height: 40)
+                            }
+                            VStack (alignment: .leading, spacing: 5) {
+                                Text(current["al"]["name"].stringValue)
+                                    .fontWeight(.bold)
+                                
+                                HStack (spacing: 4) {
+                                    
+                                    if !current["recommendReason"].stringValue.isEmpty {
+                                        Text(current["recommendReason"].stringValue)
+                                            .font(.system(size: 10))
+                                            .frame(height: 14)
+                                            .padding([.leading, .trailing], 4)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.red)
+                                            .background(.regularMaterial)
+                                            .cornerRadius(4)
+                                    }
+                                    
+                                    // 循环 AR (array) 里的name,也有可能不存在
+                                    if let getAuthorInfoArray = current["ar"].array {
+                                        ForEach (getAuthorInfoArray.indices, id: \.self) { index in
+                                            let current_Inner_item = getAuthorInfoArray[index]
+                                            HStack (spacing: 4) {
+                                                Text(current_Inner_item["name"].stringValue)
+                                                    .font(.system(size: 10))
+                                                    .foregroundColor(.gray)
+                                                if index != getAuthorInfoArray.count - 1 {
+                                                    Text("/")
+                                                        .font(.system(size: 10))
+                                                        .foregroundColor(.gray)
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            Spacer()
+                            FontIcon.text(.materialIcon(code: .more_vert), fontsize: 26, color: .gray)
+                        }
+                        .padding(.horizontal)
+                        .padding([.bottom])
+                    }
+                } else {
+                    Text("暂无数据")
                 }
 
             }
