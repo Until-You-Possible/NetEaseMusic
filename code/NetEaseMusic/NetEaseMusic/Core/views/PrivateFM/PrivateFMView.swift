@@ -6,10 +6,31 @@
 //
 
 import SwiftUI
+import ScalingHeaderScrollView
+
 
 struct PrivateFMView: View {
     var body: some View {
-        Text("privateview")
+
+        ScalingHeaderScrollView {
+            ZStack (alignment: .leading) {
+                ScalingHeaderScrollView {
+                    Image("topSky")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } content: {
+
+                }
+                .height(min: 250.0, max: UIScreen.main.bounds.height - 150)
+                .headerSnappingPositions(snapPositions: [0, 0.5, 1])
+                .initialSnapPosition(initialSnapPosition: 0.5)
+                .ignoresSafeArea()
+             }
+         } content: {
+             DayRecommendSongView()
+         }
+         .ignoresSafeArea()
+        
     }
 }
 
