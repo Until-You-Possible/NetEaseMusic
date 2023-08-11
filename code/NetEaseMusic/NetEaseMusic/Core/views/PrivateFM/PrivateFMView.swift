@@ -15,13 +15,13 @@ struct PrivateFMView: View {
         ScalingHeaderScrollView {
             ZStack (alignment: .leading) {
                 ScalingHeaderScrollView {
-                    Image("topSky")
+                    Image("sky_resized")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 } content: {
 
                 }
-                .height(min: 250.0, max: UIScreen.main.bounds.height - 150)
+                .height(min: 250.0, max: UIScreen.main.bounds.height - 10)
                 .headerSnappingPositions(snapPositions: [0, 0.5, 1])
                 .initialSnapPosition(initialSnapPosition: 0.5)
                 .ignoresSafeArea()
