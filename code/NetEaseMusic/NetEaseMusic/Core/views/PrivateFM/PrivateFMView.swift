@@ -11,26 +11,47 @@ import ScalingHeaderScrollView
 
 struct PrivateFMView: View {
     var body: some View {
-
-        ScalingHeaderScrollView {
-            ZStack (alignment: .leading) {
-                ScalingHeaderScrollView {
-                    Image("sky_resized")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                } content: {
-
+        NavigationView {
+            ScrollView () {
+                ForEach(0..<40) { index in
+                    Text("xxxddd")
                 }
-                .height(min: 250.0, max: UIScreen.main.bounds.height - 10)
-                .headerSnappingPositions(snapPositions: [0, 0.5, 1])
-                .initialSnapPosition(initialSnapPosition: 0.5)
-                .ignoresSafeArea()
-             }
-         } content: {
-             DayRecommendSongView()
-         }
-         .ignoresSafeArea()
+            }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            // 在此处添加按钮的操作
+                        }) {
+                            Text("Back")
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .principal) {
+                        HStack(spacing: 10) {
+                            Text("Default")
+                                .foregroundColor(.white)
+                                .font(.system(size: 14))
+                            Text("Style")
+                                .foregroundColor(.white)
+                                .font(.system(size: 14))
+                        }
+                        .padding(8)
+                        .background(Color.gray.opacity(0.6))
+                        .cornerRadius(20)
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            // 在此处添加按钮的操作
+                        }) {
+                            Text("More")
+                        }
+                    }
+                }
+                .toolbarBackground(Color.red) // 清除导航栏的背景颜色
         
+        }
     }
 }
 

@@ -25,12 +25,8 @@ struct EntrySlideView: View {
     
 
     
+    
     var body: some View {
-        
-        let today = Date()
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: today)
-        let currentItemID = ""
         
         if let entryChunkArray = entrySildeViewModel.entryData?["data"].array {
             let slicedArrayPrefix = entryChunkArray.prefix(5)
@@ -55,7 +51,7 @@ struct EntrySlideView: View {
                                                        .overlay {
                                                            Group {
                                                                if currentID == -1 {
-                                                                   Text("\(day)")
+                                                                   Text("\(BaseTools.getCurrentDay())")
                                                                        .foregroundColor(.white)
                                                                        .font(.system(size: 14))
                                                                        .offset(x: 0, y: 2)
@@ -110,7 +106,8 @@ func destinationView(for currentID: Int) -> some View {
     switch currentID {
     case -1:
         DayRecommendSongView()
-            .navigationBarHidden(true)
+        
+        
     case -6:
         PrivateFMView()
     case -2:
