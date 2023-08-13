@@ -83,7 +83,7 @@ struct ExploreView: View {
                     RecommendationView()
                         .padding([.leading, .top], 12)
                     // MARK: why recommendation
-                    WhyRecommendataionView()
+                    AllListenView()
                     Divider()
                         .background(Color.black)
                     
