@@ -23,7 +23,6 @@ class DayRecommendSongViewModel: ObservableObject {
         if let data = FileLoader.readLocalFile(filename: "RecommendSongs") {
             self.daySongsData     = FileLoader.loadJson(data: data)
             self.dayListData      = daySongsData?["data"]["dailySongs"]
-            print("dayListData", self.dayListData as Any)
             self.recommendReasons = daySongsData?["data"]["recommendReasons"]
         }
     }

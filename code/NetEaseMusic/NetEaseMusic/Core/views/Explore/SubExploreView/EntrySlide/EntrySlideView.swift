@@ -62,7 +62,7 @@ struct EntrySlideView: View {
                                                } placeholder: {
                                                    // Placeholder 视图
                                                    ProgressView()
-                                                       .frame(height: 120)
+                                                       .frame(height: 60)
                                                }
                                     }
 
