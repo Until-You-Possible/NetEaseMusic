@@ -25,7 +25,7 @@ struct BannerSlideView: View {
                         AsyncImage(url: picURL) { image in
                             image
                                 .resizable()
-                                .frame(width: 370)
+                                .frame(width: .infinity)
                                 .scaledToFit()
                                 .cornerRadius(10)
                                 .overlay(
@@ -50,7 +50,8 @@ struct BannerSlideView: View {
 
                 }
             }
-            .frame(width: .infinity, height: 160)
+            .padding(.horizontal)
+            .frame(width: UIScreen.main.bounds.width, height: 160)
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .automatic))
             .onReceive(timer) { _ in

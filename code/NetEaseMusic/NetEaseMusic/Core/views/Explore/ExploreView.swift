@@ -81,16 +81,12 @@ struct ExploreView: View {
                     EntrySlideView()
                     // MARK: Recommendation view
                     RecommendationView()
-                        .padding([.leading, .top], 12)
-                    // MARK: why recommendation
+                    // MARK: why Listen view
                     AllListenView()
-                    Divider()
-                        .background(Color.black)
+                    // MARK:
                     
-                    Divider()
-                        .background(Color.black)
                 }
-                .padding(.top, 10)
+                .padding(.top, 6)
             }
             .background(Color(hex: "#f5f7fb"))
         }
