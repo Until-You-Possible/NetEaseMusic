@@ -1,0 +1,67 @@
+{
+    "code": 200,
+    "result": {
+        "hots": [
+            {
+                "first": "他只是经过",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "会不会",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "永不失联的爱",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "不曾遗忘的符号",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "薛之谦",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "日不落",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "Dear John",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "为你我受冷风吹",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "魏大勋新歌",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            },
+            {
+                "first": "起风了",
+                "second": 1,
+                "third": null,
+                "iconType": 1
+            }
+        ]
+    }
+}

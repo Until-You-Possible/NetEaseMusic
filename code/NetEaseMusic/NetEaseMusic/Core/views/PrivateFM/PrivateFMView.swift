@@ -1,56 +1,64 @@
-//
-//  PrivateFMView.swift
-//  NetEaseMusic
-//
-//  Created by Ray on 2023/8/9.
-//
-
 import SwiftUI
-import ScalingHeaderScrollView
 
+struct ScrollOffsetPreferenceKey2: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
 
 struct PrivateFMView: View {
+    @State private var scrollOffset: CGFloat = 0
+    
+    init () {
+        print("xx")
+    }
+    
     var body: some View {
-        NavigationView {
-            ScrollView () {
-                ForEach(0..<40) { index in
-                    Text("xxxddd")
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(spacing: 20) {
+                    ForEach(0..<20) { index in
+                        Text("Item \(index)")
+                            .frame(width: 200, height: 100)
+                            .background(Color.gray)
+                            .cornerRadius(10)
+                    }
                 }
+                .padding()
+                
+                .background(
+                    GeometryReader { geo in
+                        Color.clear
+                            .onAppear {
+                                scrollOffset = geo.frame(in: .global).minY
+                            }
+                            .onChange(of: geo.frame(in: .global).minY) { newValue in
+                                scrollOffset = newValue
+                                // Do something with the scroll offset
+                                print("Scroll Offset: \(scrollOffset)")
+                            }
+                    }
+                )
+            
+                
+                .onAppear {
+                    proxy.scrollTo(10, anchor: .top) // Scroll to a specific item
+                }
+                .overlay(
+                    GeometryReader { geo in
+                        Color.clear
+                            .preference(key: ScrollOffsetPreferenceKey2.self, value: geo.frame(in: .global).minY)
+                    }
+                )
             }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button(action: {
-                            // 在此处添加按钮的操作
-                        }) {
-                            Text("Back")
-                        }
+            .background(
+                Color.clear
+                    .onPreferenceChange(ScrollOffsetPreferenceKey.self) { newOffset in
+                        scrollOffset = newOffset
                     }
-                    
-                    ToolbarItem(placement: .principal) {
-                        HStack(spacing: 10) {
-                            Text("Default")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14))
-                            Text("Style")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14))
-                        }
-                        .padding(8)
-                        .background(Color.gray.opacity(0.6))
-                        .cornerRadius(20)
-                    }
-                    
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            // 在此处添加按钮的操作
-                        }) {
-                            Text("More")
-                        }
-                    }
-                }
-                .toolbarBackground(Color.red) // 清除导航栏的背景颜色
-        
+            )
         }
     }
 }
@@ -60,3 +68,4 @@ struct PrivateFMView_Previews: PreviewProvider {
         PrivateFMView()
     }
 }
+

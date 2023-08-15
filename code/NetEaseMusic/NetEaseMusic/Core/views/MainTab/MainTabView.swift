@@ -10,22 +10,20 @@ import SwiftUIFontIcon
 
 struct MainTabView: View {
     var body: some View {
-            
             TabView {
                 ExploreView()
                     .tabItem() {
                         Text("发现")
-                        // font代码貌似没起作用
+//                        // font代码貌似没起作用
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                         Image(systemName: "viewfinder.circle")
-                        // Label("发现", systemImage: "music.note.list")
+//                         Label("发现", systemImage: "music.note.list")
+//                            .font(.system(size: 50))
                     }
                 BodCastView()
                     .tabItem() {
                         Text("播客")
                         Image(systemName: "list.star")
-                        // FontIcon.text(.materialIcon(code: .person))
-                        // Label("播客", systemImage: "list.star")
                     }
                 MineView()
                     .tabItem() {
@@ -42,6 +40,7 @@ struct MainTabView: View {
             }
             // Before iOS 16, you can use .accentColor color modifier on TabView.
             .accentColor(Color(hex: "#d43c33"))
+            .background(.red)
         }
 }
 

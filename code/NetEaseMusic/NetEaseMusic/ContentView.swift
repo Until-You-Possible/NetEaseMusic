@@ -23,7 +23,7 @@ struct ContentView: View {
                 if isLogin {
                      MainTabView()
                 } else {
-
+                    LoginView()
                 }
                 
                 //MARK: shadow for the sideMenu

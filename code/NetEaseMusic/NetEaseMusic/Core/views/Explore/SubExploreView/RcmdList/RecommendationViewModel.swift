@@ -25,7 +25,6 @@ class RecommendationViewModel: ObservableObject {
                 for obj in allBlocks  {
                     if obj["blockCode"].stringValue == "HOMEPAGE_BLOCK_PLAYLIST_RCMD" {
                         rcmdData = obj
-                        print("obj", obj)
                     }
                 }
             }

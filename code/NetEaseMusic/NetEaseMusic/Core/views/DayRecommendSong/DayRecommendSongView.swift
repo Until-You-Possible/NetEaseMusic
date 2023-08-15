@@ -12,8 +12,11 @@ struct DayRecommendSongView: View {
     
     @State private var currentOffset: CGFloat = 0
     @StateObject var dayRecommendSongViewModel  = DayRecommendSongViewModel()
+    @Environment(\.presentationMode) var presentationMode
+    
 
     var body: some View {
+        
         NavigationView {
             ScrollView {
                 VStack {
@@ -75,10 +78,6 @@ struct DayRecommendSongView: View {
                             }
                             .padding([.leading, .bottom], 20)
 
-                        }
-                        .onPreferenceChange(OffsetPreferenceKey.self) { newOffset in
-                            let scrollOffset = newOffset
-                            self.currentOffset = scrollOffset
                         }
                         
                         .frame(height: 250)
@@ -158,7 +157,15 @@ struct DayRecommendSongView: View {
                     }
                 }
             }
-            
+            .onChange(of: currentOffset) { newValue in
+                print("newValue", newValue)
+            }
+            .overlay(
+                GeometryReader { geo in
+                    Color.clear
+                        .preference(key: ScrollOffsetPreferenceKey.self, value: geo.frame(in: .global).minY)
+                }
+            )
             .overlay(
                 Color.white
                        .frame(height: UIApplication.shared.connectedScenes
@@ -172,14 +179,21 @@ struct DayRecommendSongView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
-        .onPreferenceChange(OffsetPreferenceKey.self) { _ in
-            updateNavBarAppearance()
+        .onAppear() {
+            let navBarAppearance = UINavigationBarAppearance()
+                navBarAppearance.backgroundImage = UIImage(named: "sky_resized")
+                navBarAppearance.backgroundImageContentMode = .scaleAspectFill
+                UINavigationBar.appearance().standardAppearance = navBarAppearance
+                UINavigationBar.appearance().compactAppearance = navBarAppearance
+                UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         }
+        .toolbar(.hidden, for: .tabBar)
         .toolbar {
             // 在导航栏中添加一个按钮
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
                     // 在此处添加按钮的操作
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     FontIcon.text(.materialIcon(code: .arrow_back),
                                   fontsize: 28, color: .white)
@@ -216,10 +230,7 @@ struct DayRecommendSongView: View {
         
     }
     private func updateNavBarAppearance() {
-        print("updateNavBarAppearance")
-        print("currentOffset", currentOffset)
         let navBarAppearance = UINavigationBarAppearance()
-            
         if currentOffset > 100 {
             print("currentOffset", currentOffset)
                 navBarAppearance.backgroundImage = UIImage(named: "sky_resized")
@@ -231,7 +242,7 @@ struct DayRecommendSongView: View {
         }
 }
 
-struct OffsetPreferenceKey: PreferenceKey {
+struct ScrollOffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
     
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
