@@ -25,7 +25,7 @@ struct MainTabView: View {
                         Text("播客")
                         Image(systemName: "list.star")
                     }
-                MineView()
+                MyInfoView()
                     .tabItem() {
                         Label("我的", systemImage: "music.note.list")
                     }

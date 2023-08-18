@@ -9,27 +9,23 @@ import SwiftUI
 import SwiftUIFontIcon
 
 struct InfoEntryType {
-    var icon: SwiftUIFontIcon.MaterialIconCode
+    let icon: String
     var text: String
 }
-
-
-
-
 
 struct MyInfoView: View {
     
     @State var currentFocus: Int = 3
     @State var avatar: String = "topSky"
     let staticEntryList = [
-        InfoEntryType(icon: .account_circle, text: "最近播放"),
-        InfoEntryType(icon: .account_circle, text: "本地下载"),
-        InfoEntryType(icon: .account_circle, text: "云盘"),
-        InfoEntryType(icon: .account_circle, text: "已购"),
-        InfoEntryType(icon: .account_circle, text: "我的好友"),
-        InfoEntryType(icon: .account_circle, text: "收藏和赞"),
-        InfoEntryType(icon: .account_circle, text: "我的播客"),
-        InfoEntryType(icon: .account_circle, text: "交友")
+        InfoEntryType(icon: "play.circle.fill", text: "最近播放"),
+        InfoEntryType(icon: "square.and.arrow.down.fill", text: "本地下载"),
+        InfoEntryType(icon: "opticaldiscdrive.fill", text: "云盘"),
+        InfoEntryType(icon: "square.and.arrow.up.circle.fill", text: "已购"),
+        InfoEntryType(icon: "teddybear.fill", text: "我的好友"),
+        InfoEntryType(icon: "graduationcap.circle.fill", text: "收藏和赞"),
+        InfoEntryType(icon: "livephoto", text: "我的播客"),
+        InfoEntryType(icon: "figure.mind.and.body", text: "交友")
     ]
     
     var body: some View {
@@ -96,86 +92,31 @@ struct MyInfoView: View {
                             .stroke(Color.gray, lineWidth: 1)
                     )
                     .offset(x: 0, y: -80)
-                    .shadow(color: Color.gray, radius: 5, x: 0, y: 2)
+                    .shadow(color: Color.gray, radius: 5, x: 0, y: 3)
                 }
-                .padding(.bottom, 30)
+                .padding(.bottom, 16)
                 
                 //MARK: some entry
-                
                 VStack () {
-                    HStack() {
-                        VStack(spacing: 4) {
-                            FontIcon.text(.materialIcon(code: .account_circle),
-                                          fontsize: 40, color: .red)
-                            Text("最近播放")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 12))
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 60))]) {
+                        ForEach(staticEntryList, id: \.icon) { list in
+                            VStack(spacing: 8) {
+                                Image(systemName: list.icon)
+                                    .foregroundColor(.red)
+                                    .font(.system(size: 30))
+                                    .frame(width: 36, height: 36)
+                                Text(list.text)
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 12))
+                            }
                         }
-                        Spacer()
-                        VStack(spacing: 4) {
-                            FontIcon.text(.materialIcon(code: .account_circle),
-                                          fontsize: 40, color: .red)
-                            Text("最近播放")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 12))
-                        }
-                        Spacer()
-                        VStack(spacing: 4) {
-                            FontIcon.text(.materialIcon(code: .account_circle),
-                                          fontsize: 40, color: .red)
-                            Text("最近播放")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 12))
-                        }
-                        Spacer()
-                        VStack(spacing: 4) {
-                            FontIcon.text(.materialIcon(code: .account_circle),
-                                          fontsize: 40, color: .red)
-                            Text("最近播放")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 12))
-                        }
-                        
                     }
-                    .padding([.top, .bottom], 30)
-                    HStack() {
-                        VStack(spacing: 4) {
-                            FontIcon.text(.materialIcon(code: .account_circle),
-                                          fontsize: 40, color: .red)
-                            Text("最近播放")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 12))
-                        }
-                        Spacer()
-                        VStack(spacing: 4) {
-                            FontIcon.text(.materialIcon(code: .account_circle),
-                                          fontsize: 40, color: .red)
-                            Text("最近播放")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 12))
-                        }
-                        Spacer()
-                        VStack(spacing: 4) {
-                            FontIcon.text(.materialIcon(code: .account_circle),
-                                          fontsize: 40, color: .red)
-                            Text("最近播放")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 12))
-                        }
-                        Spacer()
-                        VStack(spacing: 4) {
-                            FontIcon.text(.materialIcon(code: .account_circle),
-                                          fontsize: 40, color: .red)
-                            Text("最近播放")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 12))
-                        }
-                        
-                    }
-                    .padding([.bottom], 30)
+                    
                 }
                 .padding(.leading, 30)
                 .padding(.trailing, 30)
+                .padding(.top, 20)
+                .padding(.bottom, 20)
                 .background(.white)
                 .cornerRadius(20)
                 

@@ -100,12 +100,15 @@ struct ExploreView: View {
                     .background(Color(hex: "#f5f7fb"))
                 }
                 
-                //MARK: to show the sideMenu by button
+                // MARK: to show the sideMenu by button
+                // 这里要注意的一点是 在ZStack中代码越前 层级越低(如果不加zIndex的情况下)
                 SideMenuView()
                     .frame(width: 300)
                     .background(isShowSideMenu ? Color.white : Color.clear)
                     .offset(x: isShowSideMenu ? 0: -300, y: 0)
-                //MARK: shadow for the sideMenu
+                    .zIndex(2)
+                
+                // MARK: shadow for the sideMenu
                 if isShowSideMenu {
                     ZStack {
                         Color(.black)
@@ -120,6 +123,7 @@ struct ExploreView: View {
                     .ignoresSafeArea()
                     
                 }
+            
                 
             }
         }
