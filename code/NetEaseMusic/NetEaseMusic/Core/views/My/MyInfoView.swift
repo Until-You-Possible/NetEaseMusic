@@ -8,10 +8,29 @@
 import SwiftUI
 import SwiftUIFontIcon
 
+struct InfoEntryType {
+    var icon: SwiftUIFontIcon.MaterialIconCode
+    var text: String
+}
+
+
+
+
+
 struct MyInfoView: View {
     
     @State var currentFocus: Int = 3
     @State var avatar: String = "topSky"
+    let staticEntryList = [
+        InfoEntryType(icon: .account_circle, text: "最近播放"),
+        InfoEntryType(icon: .account_circle, text: "本地下载"),
+        InfoEntryType(icon: .account_circle, text: "云盘"),
+        InfoEntryType(icon: .account_circle, text: "已购"),
+        InfoEntryType(icon: .account_circle, text: "我的好友"),
+        InfoEntryType(icon: .account_circle, text: "收藏和赞"),
+        InfoEntryType(icon: .account_circle, text: "我的播客"),
+        InfoEntryType(icon: .account_circle, text: "交友")
+    ]
     
     var body: some View {
         VStack  {
@@ -31,7 +50,7 @@ struct MyInfoView: View {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.black)
                 }
-                .padding(.bottom, 60 )
+                .padding(.bottom, 60)
                 
                 //MARK: personal infomation
                 VStack (spacing: 10) {
@@ -79,6 +98,87 @@ struct MyInfoView: View {
                     .offset(x: 0, y: -80)
                     .shadow(color: Color.gray, radius: 5, x: 0, y: 2)
                 }
+                .padding(.bottom, 30)
+                
+                //MARK: some entry
+                
+                VStack () {
+                    HStack() {
+                        VStack(spacing: 4) {
+                            FontIcon.text(.materialIcon(code: .account_circle),
+                                          fontsize: 40, color: .red)
+                            Text("最近播放")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 12))
+                        }
+                        Spacer()
+                        VStack(spacing: 4) {
+                            FontIcon.text(.materialIcon(code: .account_circle),
+                                          fontsize: 40, color: .red)
+                            Text("最近播放")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 12))
+                        }
+                        Spacer()
+                        VStack(spacing: 4) {
+                            FontIcon.text(.materialIcon(code: .account_circle),
+                                          fontsize: 40, color: .red)
+                            Text("最近播放")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 12))
+                        }
+                        Spacer()
+                        VStack(spacing: 4) {
+                            FontIcon.text(.materialIcon(code: .account_circle),
+                                          fontsize: 40, color: .red)
+                            Text("最近播放")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 12))
+                        }
+                        
+                    }
+                    .padding([.top, .bottom], 30)
+                    HStack() {
+                        VStack(spacing: 4) {
+                            FontIcon.text(.materialIcon(code: .account_circle),
+                                          fontsize: 40, color: .red)
+                            Text("最近播放")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 12))
+                        }
+                        Spacer()
+                        VStack(spacing: 4) {
+                            FontIcon.text(.materialIcon(code: .account_circle),
+                                          fontsize: 40, color: .red)
+                            Text("最近播放")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 12))
+                        }
+                        Spacer()
+                        VStack(spacing: 4) {
+                            FontIcon.text(.materialIcon(code: .account_circle),
+                                          fontsize: 40, color: .red)
+                            Text("最近播放")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 12))
+                        }
+                        Spacer()
+                        VStack(spacing: 4) {
+                            FontIcon.text(.materialIcon(code: .account_circle),
+                                          fontsize: 40, color: .red)
+                            Text("最近播放")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 12))
+                        }
+                        
+                    }
+                    .padding([.bottom], 30)
+                }
+                .padding(.leading, 30)
+                .padding(.trailing, 30)
+                .background(.white)
+                .cornerRadius(20)
+                
                 
                 
                 Spacer()
