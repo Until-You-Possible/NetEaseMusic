@@ -16,8 +16,9 @@ struct InfoEntryType {
 struct MyInfoView: View {
     
     @State var currentFocus: Int = 3
-    @State var avatar: String = "topSky"
+    @State var isLogin: Bool = false
     @State var currentSection: Int = 1
+    
     let staticEntryList = [
         InfoEntryType(icon: "play.circle.fill", text: "最近播放"),
         InfoEntryType(icon: "square.and.arrow.down.fill", text: "本地下载"),
@@ -52,31 +53,41 @@ struct MyInfoView: View {
                     
                     //MARK: personal infomation
                     VStack (spacing: 10) {
-                        HStack() {
-                            Text("小南")
-                                .font(.system(size: 24))
-                                .fontWeight(.bold)
-                            Text("Arthur")
+                        if isLogin {
+                            
+                            HStack() {
+                                Text("小南")
+                                    .font(.system(size: 24))
+                                    .fontWeight(.bold)
+                                Text("Arthur")
+                                    .font(.system(size: 20))
+                                    .fontWeight(.bold)
+                                Text("VIP")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(Color.gray )
+                            }
+                            .padding(.top, 60)
+                            HStack () {
+                                Text("\(currentFocus)  关注")
+                                Text("\(currentFocus)  粉丝")
+                                Text("LV.7")
+                            }
+                            .padding(.bottom, 30)
+                        } else {
+                            Text("立即登录")
                                 .font(.system(size: 20))
-                                .fontWeight(.bold)
-                            Text("VIP")
-                                .font(.system(size: 12))
-                                .foregroundColor(Color.gray )
+                                .onTapGesture {
+                                    print("立即登录")
+                                }
+                                .padding(.top)
                         }
-                        .padding(.top, 60)
-                        HStack () {
-                            Text("\(currentFocus)  关注")
-                            Text("\(currentFocus)  粉丝")
-                            Text("LV.7")
-                        }
-                        .padding(.bottom, 30)
                     }
-                    .frame(width: 350)
+                    .frame(width: 350, height: 160)
                     .background(.white)
                     .cornerRadius(20)
                     .overlay {
                         HStack () {
-                            if avatar.isEmpty {
+                            if !isLogin {
                                 FontIcon.text(.materialIcon(code: .account_circle),
                                               fontsize: 100, color: .gray)
                             } else {
@@ -127,16 +138,70 @@ struct MyInfoView: View {
                         LazyVStack (alignment: .leading, pinnedViews: [.sectionHeaders]) {
                             
                             Section(header: HeaderTabView()) {
-                                ForEach(0..<60) { _ in
-                                    Text("xxx")
+
+                                VStack (alignment: .leading) {
+                                    HStack () {
+                                        Text("创建歌单")
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.gray)
+                                        Spacer()
+                                        HStack {
+                                            Image(systemName: "plus")
+                                                .foregroundColor(.gray)
+                                            Spacer()
+                                                .frame(width: 20)
+                                            Image(systemName: "ellipsis")
+                                                .foregroundColor(.gray)
+                                        }
+                                    }
+                                    .padding()
+                                    HStack () {
+                                        Image(systemName: "square.and.arrow.up.on.square.fill")
+                                            .font(.system(size: 40))
+                                            .foregroundColor(.gray)
+                                        Text("一键导入外部音乐")
+                                            .foregroundColor(.gray)
+                                    }
+                                    .padding(.bottom, 30)
+                                    .padding(.leading, 20)
+                                    
                                 }
+                                .background(.white)
+                                .cornerRadius(20)
+                                Spacer()
+                                    .frame(height: 30)
+                                VStack (alignment: .leading) {
+                                    HStack () {
+                                        Text("收藏歌单")
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.gray)
+                                        Spacer()
+                                        HStack {                                            Image(systemName: "ellipsis")
+                                                .foregroundColor(.gray)
+                                        }
+                                    }
+                                    .padding()
+                                    if isLogin {
+                                        
+                                    } else {
+                                        HStack () {
+                                            Spacer()
+                                            Text("暂无收藏歌单")
+                                                .foregroundColor(.gray)
+                                            Spacer()
+                                        }
+                                        .padding(.bottom, 30)
+                                        .padding(.leading, 20)
+                                    }
+                                    
+                                }
+                                .background(.white)
+                                .cornerRadius(20)
 
                             }
                             
                         }
                     }
-                    
-                    
                     
                     Spacer()
                 }

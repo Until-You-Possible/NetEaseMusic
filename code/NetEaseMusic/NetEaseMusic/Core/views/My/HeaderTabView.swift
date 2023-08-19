@@ -37,6 +37,7 @@ struct HeaderTabView: View {
                 .modifier(TabIndicatorModifier(isSelected: !isChoosed))
             Spacer()
         }
+        .frame(height: 60)
     }
 }
 

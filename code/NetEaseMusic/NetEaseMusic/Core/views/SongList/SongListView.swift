@@ -9,7 +9,19 @@ import SwiftUI
 
 struct SongListView: View {
     var body: some View {
-        Text("song list view")
+        VStack () {
+//            RoundedRectangle(cornerRadius: 30)
+//                .fill(
+////                    LinearGradient(colors: [Color.red], startPoint: .leading, endPoint: .bottomLeading)
+//                    LinearGradient(gradient: Gradient(colors: [.red, Color.blue]), startPoint: .leading, endPoint: .trailing)
+//                )
+            RoundedRectangle(cornerRadius: 45.0)
+                        .fill(
+                            LinearGradient(gradient: Gradient(colors: [Color.red,Color.blue]), startPoint: .leading, endPoint: .trailing)
+                        )
+                        .frame(width: 300,height: 200)
+            
+        }
     }
 }
 
