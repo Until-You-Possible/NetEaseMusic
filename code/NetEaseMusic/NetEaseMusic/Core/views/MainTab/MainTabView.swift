@@ -40,7 +40,6 @@ struct MainTabView: View {
             }
             // Before iOS 16, you can use .accentColor color modifier on TabView.
             .accentColor(Color(hex: "#d43c33"))
-            .background(.red)
         }
 }
 
