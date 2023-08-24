@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIFontIcon
 
 
 struct BodCastView: View {
@@ -13,8 +14,22 @@ struct BodCastView: View {
     @ObservedObject var viewModel = EntrySlideViewModel()
     
     var body: some View {
-
-        Text("text")
+        
+//        NavigationView {
+            VStack () {
+                Text("xxx")
+            }
+            .background(.gray)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        // 在此处添加按钮的操作
+                    }) {
+                        FontIcon.text(.materialIcon(code: .arrow_back),
+                                      fontsize: 28, color: .black)
+                    }
+                }
+            }
     }
 
 }
