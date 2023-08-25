@@ -15,23 +15,16 @@ struct BodCastView: View {
     
     var body: some View {
         
-//        NavigationView {
-            VStack () {
-                Text("xxx")
+        VStack () {
+            Text("xxx")
+        }
+        .background(.gray)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Text("播客")
             }
-            .background(.gray)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        // 在此处添加按钮的操作
-                    }) {
-                        FontIcon.text(.materialIcon(code: .arrow_back),
-                                      fontsize: 28, color: .black)
-                    }
-                }
-            }
+        }
     }
-
 }
 
 

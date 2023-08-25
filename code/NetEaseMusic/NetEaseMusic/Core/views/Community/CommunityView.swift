@@ -9,7 +9,14 @@ import SwiftUI
 
 struct CommunityView: View {
     var body: some View {
-        Text("community")
+        VStack () {
+            Text("社区")
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Text("社区")
+            }
+        }
     }
 }
 

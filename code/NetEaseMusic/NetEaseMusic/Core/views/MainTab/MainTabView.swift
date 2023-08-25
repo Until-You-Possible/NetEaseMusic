@@ -14,11 +14,10 @@ struct MainTabView: View {
                 ExploreView()
                     .tabItem() {
                         Text("发现")
-//                        // font代码貌似没起作用
+                          // font代码貌似没起作用
+                          // (这里要使用UIkit实现)
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                         Image(systemName: "viewfinder.circle")
-//                         Label("发现", systemImage: "music.note.list")
-//                            .font(.system(size: 50))
                     }
                 BodCastView()
                     .tabItem() {

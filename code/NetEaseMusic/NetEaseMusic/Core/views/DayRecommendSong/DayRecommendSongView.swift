@@ -17,7 +17,6 @@ struct DayRecommendSongView: View {
 
     var body: some View {
         
-        NavigationView {
             ScrollView {
                 VStack {
                     LazyVStack (alignment: .leading, pinnedViews: [.sectionHeaders]) {
@@ -176,57 +175,56 @@ struct DayRecommendSongView: View {
                    alignment: .top
             )
             .environmentObject(dayRecommendSongViewModel)
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .onAppear() {
-            let navBarAppearance = UINavigationBarAppearance()
-                navBarAppearance.backgroundImage = UIImage(named: "sky_resized")
-                navBarAppearance.backgroundImageContentMode = .scaleAspectFill
-                UINavigationBar.appearance().standardAppearance = navBarAppearance
-                UINavigationBar.appearance().compactAppearance = navBarAppearance
-                UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        }
-        .toolbar(.hidden, for: .tabBar)
-        .toolbar {
-            // 在导航栏中添加一个按钮
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    // 在此处添加按钮的操作
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    FontIcon.text(.materialIcon(code: .arrow_back),
-                                  fontsize: 28, color: .white)
-                }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .onAppear() {
+                let navBarAppearance = UINavigationBarAppearance()
+                    navBarAppearance.backgroundImage = UIImage(named: "sky_resized")
+                    navBarAppearance.backgroundImageContentMode = .scaleAspectFill
+                    UINavigationBar.appearance().standardAppearance = navBarAppearance
+                    UINavigationBar.appearance().compactAppearance = navBarAppearance
+                    UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
             }
-            // MARK: center control buttons
-            ToolbarItem(placement: .principal) {
-                    ZStack () {
-                        Color.gray
-                            .opacity(0.6)
-                            .frame(width: 160, height: 30)
-                            .cornerRadius(20)
-                        HStack (spacing: 26) {
-                            Text("默认推荐")
-                                .foregroundColor(.white)
-                                .font(.system(size: 12))
-                            Text("风格推荐")
-                                .foregroundColor(.white)
-                                .font(.system(size: 12))
-                        }
+            .toolbar(.hidden, for: .tabBar)
+            .toolbar {
+                // 在导航栏中添加一个按钮
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        // 在此处添加按钮的操作
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        FontIcon.text(.materialIcon(code: .arrow_back),
+                                      fontsize: 28, color: .white)
                     }
+                }
+                // MARK: center control buttons
+                ToolbarItem(placement: .principal) {
+                        ZStack () {
+                            Color.gray
+                                .opacity(0.6)
+                                .frame(width: 160, height: 30)
+                                .cornerRadius(20)
+                            HStack (spacing: 26) {
+                                Text("默认推荐")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 12))
+                                Text("风格推荐")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 12))
+                            }
+                        }
 
-                
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    // 在此处添加按钮的操作
-                }) {
-                    FontIcon.text(.materialIcon(code: .more_vert),
-                                  fontsize: 28, color: .white)
+                    
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        // 在此处添加按钮的操作
+                    }) {
+                        FontIcon.text(.materialIcon(code: .more_vert),
+                                      fontsize: 28, color: .white)
+                    }
                 }
             }
-        }
         
     }
     private func updateNavBarAppearance() {

@@ -14,7 +14,7 @@ struct SearchCenterView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView {
+
             VStack {
                 HStack(alignment: .center) {
                     Button {
@@ -108,9 +108,8 @@ struct SearchCenterView: View {
                 Spacer()
             }
             .background(Color(.systemGray5))
-        }
-        .toolbar(.hidden, for: .tabBar)
-        .navigationBarHidden(true)
+            .toolbar(.hidden, for: .tabBar)
+            .navigationBarHidden(true)
         
     }
 }

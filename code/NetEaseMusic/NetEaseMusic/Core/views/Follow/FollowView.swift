@@ -6,10 +6,26 @@
 //
 
 import SwiftUI
+import SwiftUIFontIcon
 
 struct FollowView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        Text("Follow view")
+        VStack () {
+            Text("关注")
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    // 在此处添加按钮的操作
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("关注")
+                }
+            }
+        }
     }
 }
 
