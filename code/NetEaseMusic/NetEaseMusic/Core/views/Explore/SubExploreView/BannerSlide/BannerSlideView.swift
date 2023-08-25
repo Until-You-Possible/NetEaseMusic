@@ -25,7 +25,6 @@ struct BannerSlideView: View {
                         AsyncImage(url: picURL) { image in
                             image
                                 .resizable()
-                                .frame(width: .infinity)
                                 .scaledToFit()
                                 .cornerRadius(10)
                                 .overlay(

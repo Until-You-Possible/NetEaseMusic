@@ -13,11 +13,8 @@ struct ExploreView: View {
     @Binding var isShowSideMenu: Bool
     
     var body: some View {
-        VStack {
             // MARK: scroll view
-            ScrollView {
-                VStack (spacing: 0) {
-                    HStack { Spacer() }
+        ScrollView (.vertical) {
                     // MARK: Banner view
                     BannerSlideView()
                     // MARK: Entry slide view
@@ -26,69 +23,69 @@ struct ExploreView: View {
                     RecommendationView()
                     // MARK: why Listen view
                     AllListenView()
-                    
-                }
             }
             .background(Color(hex: "#f5f7fb"))
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    print("show the left menu")
-                    withAnimation(.easeInOut) {
-//                        self.isShowSideMenu = true
-                        self.isShowSideMenu.toggle()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        print("show the left menu")
+                        withAnimation(.easeInOut) {
+                            self.isShowSideMenu.toggle()
+                        }
+                    } label: {
+                        ZStack {
+                            FontIcon.text(.materialIcon(code: .menu), fontsize: 26)
+                            // Replace "xxx" with the actual badge value you want to display
+                            Text("20")
+                                .font(.system(size: 8))
+                                .foregroundColor(.white)
+                                .padding(5)
+                                .background(Color.red)
+                                .clipShape(Circle())
+                                .offset(x: 10, y: -6) // Adjust the offset to position the badge as per your requirement
+                        }
+                        
                     }
-                } label: {
-                    ZStack {
-                        FontIcon.text(.materialIcon(code: .menu), fontsize: 26)
-                        // Replace "xxx" with the actual badge value you want to display
-                        Text("20")
-                            .font(.system(size: 8))
-                            .foregroundColor(.white)
-                            .padding(5)
-                            .background(Color.red)
-                            .clipShape(Circle())
-                            .offset(x: 10, y: -6) // Adjust the offset to position the badge as per your requirement
+                    .buttonStyle(PlainButtonStyle())
+                    .foregroundColor(.black)
+                    .badge(20)
+                }
+                
+                ToolbarItem() {
+                    VStack () {
+                        NavigationLink {
+                            SearchCenterView()
+                        } label: {
+                            // MARK: search wrapper
+                            HStack (spacing: 0) {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(Color(hex: "#8783a2"))
+                                Text("until-you-possible-arthur")
+                                    .frame(width: 196)
+                                    .foregroundColor(Color(hex: "#8783a2"))
+                                FontIcon.text(.materialIcon(code: .flip))
+                                    .foregroundColor(Color(hex: "#8783a2"))
+                            }
+                            .foregroundColor(Color(hex: "#dfd4f6"))
+                            .frame(width: 260, height: 36)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                     .stroke(.gray, lineWidth: 1)
+    
+                            )
+                        }
                     }
-                    
+                    .frame(height: 30)
+
                 }
-                .buttonStyle(PlainButtonStyle())
-                .foregroundColor(.black)
-                .badge(20)
-            }
-            
-            ToolbarItem(placement: .principal) {
-                NavigationLink {
-                    SearchCenterView()
-                } label: {
-                    // MARK: search wrapper
-                    HStack (spacing: 16) {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(Color(hex: "#8783a2"))
-                        Text("until-you-possible")
-                            .frame(width: 160)
-                            .foregroundColor(Color(hex: "#8783a2"))
-                        FontIcon.text(.materialIcon(code: .flip))
-                            .foregroundColor(Color(hex: "#8783a2"))
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack (alignment: .center) {
+                        FontIcon.text(.materialIcon(code: .mic_none), fontsize: 26)
                     }
-                    .foregroundColor(Color(hex: "#dfd4f6"))
-                    .frame(width: 260, height: 36)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                             .stroke(.gray, lineWidth: 1)
-                                
-                    )
                 }
+                
             }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                HStack (alignment: .center) {
-                    FontIcon.text(.materialIcon(code: .mic_none), fontsize: 26)
-                }
-            }
-            
-        }
     }
 }
 

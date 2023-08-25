@@ -9,13 +9,6 @@ import SwiftUI
 import SwiftUIFontIcon
 import Kingfisher
 
-struct EntryType: Identifiable, Hashable {
-    var id = UUID()
-    var code: SwiftUIFontIcon.MaterialIconCode
-    var text: String
-}
-
-
 struct EntrySlideView: View {
     
     @ObservedObject var entrySildeViewModel = EntrySlideViewModel()
