@@ -14,9 +14,9 @@ struct ContentView: View {
     @State private var isLogin = true
     
     var body: some View {
-        Group {
-            isLogin ? AnyView(MainTabView()) : AnyView(LoginView())
-        }
+        
+        isLogin ? AnyView(MainTabView()) : AnyView(LoginView())
+        
     }
 }
 

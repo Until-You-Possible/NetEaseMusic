@@ -212,12 +212,7 @@ struct MyInfoView: View {
         .background(Color(.systemGray5))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    // 在此处添加按钮的操作
-//                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("我的")
-                }
+                Text("我的")
             }
         }
     }

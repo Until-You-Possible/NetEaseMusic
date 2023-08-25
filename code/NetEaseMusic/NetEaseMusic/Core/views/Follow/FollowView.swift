@@ -18,12 +18,7 @@ struct FollowView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    // 在此处添加按钮的操作
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("关注")
-                }
+                Text("关注")
             }
         }
     }

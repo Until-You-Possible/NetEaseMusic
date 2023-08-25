@@ -126,7 +126,7 @@ func destinationView(for currentID: Int) -> some View {
     case 18000:
         GameAreaView()
     default:
-        ExploreView()
+        ExploreView(isShowSideMenu: .constant(false))
     }
 }
 

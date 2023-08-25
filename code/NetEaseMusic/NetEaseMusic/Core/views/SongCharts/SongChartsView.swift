@@ -9,7 +9,17 @@ import SwiftUI
 
 struct SongChartsView: View {
     var body: some View {
-        Text("song charts view")
+        HStack () {
+            Text("song charts view")
+        }
+        .frame(width: 200, height: 40)
+        .border(.gray, width: 1)
+        .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                 .stroke(.orange, lineWidth: 2)
+                    
+        )
     }
 }
 
