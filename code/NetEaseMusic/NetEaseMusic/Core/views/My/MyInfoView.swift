@@ -34,22 +34,6 @@ struct MyInfoView: View {
         ScrollView {
             VStack  {
                 VStack () {
-                    HStack (spacing: 0) {
-                        FontIcon.text(.materialIcon(code: .menu), fontsize: 26)
-                        Spacer()
-                        HStack (spacing: 0) {
-                            FontIcon.text(.materialIcon(code: .add), fontsize: 18)
-                            Spacer()
-                                .frame(width: 4)
-                            Text("添加状态")
-                                .font(.system(size: 14))
-                        }
-                        .frame(width: 100, height: 28)
-                        Spacer()
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(.black)
-                    }
-                    .padding(.bottom, 60)
                     
                     //MARK: personal infomation
                     VStack (spacing: 10) {
@@ -95,9 +79,9 @@ struct MyInfoView: View {
                                     .resizable()
                                     .frame(width: 100, height: 100)
                                     .cornerRadius(50)
-
+                                
                             }
-
+                            
                         }
                         .frame(width: 100, height: 100)
                         .overlay(
@@ -138,7 +122,7 @@ struct MyInfoView: View {
                         LazyVStack (alignment: .leading, pinnedViews: [.sectionHeaders]) {
                             
                             Section(header: HeaderTabView()) {
-
+                                
                                 VStack (alignment: .leading) {
                                     HStack () {
                                         Text("创建歌单")
@@ -197,7 +181,7 @@ struct MyInfoView: View {
                                 }
                                 .background(.white)
                                 .cornerRadius(20)
-
+                                
                             }
                             
                         }
@@ -206,19 +190,36 @@ struct MyInfoView: View {
                     Spacer()
                 }
                 .padding(.horizontal)
+                .padding(.top, 60)
             }
             .frame(width: UIScreen.main.bounds.width)
         }
         .background(Color(.systemGray5))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Text("我的")
+                FontIcon.text(.materialIcon(code: .menu), fontsize: 26)
+                
+            }
+            ToolbarItem(placement: .principal) {
+                HStack (spacing: 0) {
+                    HStack(spacing: 0) {
+                        FontIcon.text(.materialIcon(code: .add), fontsize: 18)
+                        Spacer()
+                            .frame(width: 4)
+                        Text("添加状态")
+                            .font(.system(size: 14))
+                    }
+                }
+                
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.black)
             }
         }
     }
+    
 }
-
-
 struct MyInfoView_Previews: PreviewProvider {
     static var previews: some View {
         MyInfoView()

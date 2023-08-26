@@ -73,7 +73,7 @@ struct MainTabView: View {
                         self.isShowSideMenu = false
                     }
                 }
-                .ignoresSafeArea()
+//                .ignoresSafeArea()
                 
             }
         }
