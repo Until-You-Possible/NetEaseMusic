@@ -25,6 +25,7 @@ struct ExploreView: View {
                     AllListenView()
             }
             .background(Color(hex: "#f5f7fb"))
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -51,7 +52,7 @@ struct ExploreView: View {
                     .badge(20)
                 }
                 
-                ToolbarItem() {
+                ToolbarItem(placement: .principal) {
                     VStack () {
                         NavigationLink {
                             SearchCenterView()

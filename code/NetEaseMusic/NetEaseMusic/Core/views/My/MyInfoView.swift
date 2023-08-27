@@ -13,6 +13,18 @@ struct InfoEntryType {
     var text: String
 }
 
+struct TriangleShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+          path.move(to: CGPoint(x: rect.midX, y: rect.maxY))
+          path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+          path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+          path.closeSubpath()
+          return path
+        
+    }
+}
+
 struct MyInfoView: View {
     
     @State var currentFocus: Int = 3
@@ -195,6 +207,7 @@ struct MyInfoView: View {
             .frame(width: UIScreen.main.bounds.width)
         }
         .background(Color(.systemGray5))
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 FontIcon.text(.materialIcon(code: .menu), fontsize: 26)
@@ -209,6 +222,19 @@ struct MyInfoView: View {
                         Text("添加状态")
                             .font(.system(size: 14))
                     }
+                    .frame(width: 100, height: 24)
+                    .background(.white)
+                    .cornerRadius(20)
+                    .overlay() {
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                             .stroke(.white, lineWidth: 1)
+                    }
+                    .overlay {
+                        TriangleShape()
+                            .frame(width: 10, height: 5)
+                            .foregroundColor(.white)
+                            .offset(x:0, y: 14)
+                    }
                 }
                 
             }
@@ -220,6 +246,10 @@ struct MyInfoView: View {
     }
     
 }
+
+
+
+
 struct MyInfoView_Previews: PreviewProvider {
     static var previews: some View {
         MyInfoView()
