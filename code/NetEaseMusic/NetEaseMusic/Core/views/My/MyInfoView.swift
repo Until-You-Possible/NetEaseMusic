@@ -25,10 +25,11 @@ struct TriangleShape: Shape {
     }
 }
 
+
 struct MyInfoView: View {
     
     @State var currentFocus: Int = 3
-    @State var isLogin: Bool = false
+    @State var isLogin: Bool = true
     @State var currentSection: Int = 1
     
     let staticEntryList = [
@@ -210,31 +211,36 @@ struct MyInfoView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                FontIcon.text(.materialIcon(code: .menu), fontsize: 26)
+                MenuButtonView()
                 
             }
             ToolbarItem(placement: .principal) {
-                HStack (spacing: 0) {
-                    HStack(spacing: 0) {
-                        FontIcon.text(.materialIcon(code: .add), fontsize: 18)
-                        Spacer()
-                            .frame(width: 4)
-                        Text("添加状态")
-                            .font(.system(size: 14))
+                if isLogin {
+                    HStack (spacing: 0) {
+                        HStack(spacing: 0) {
+                            FontIcon.text(.materialIcon(code: .add), fontsize: 18)
+                            Spacer()
+                                .frame(width: 4)
+                            Text("添加状态")
+                                .font(.system(size: 14))
+                        }
+                        .frame(width: 100, height: 24)
+                        .background(.white)
+                        .cornerRadius(20)
+                        .overlay() {
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                 .stroke(.white, lineWidth: 1)
+                        }
+                        .overlay {
+                            TriangleShape()
+                                .frame(width: 10, height: 5)
+                                .foregroundColor(.white)
+                                .offset(x:0, y: 14)
+                        }
                     }
-                    .frame(width: 100, height: 24)
-                    .background(.white)
-                    .cornerRadius(20)
-                    .overlay() {
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                             .stroke(.white, lineWidth: 1)
-                    }
-                    .overlay {
-                        TriangleShape()
-                            .frame(width: 10, height: 5)
-                            .foregroundColor(.white)
-                            .offset(x:0, y: 14)
-                    }
+                }
+                else {
+                    EmptyView()
                 }
                 
             }

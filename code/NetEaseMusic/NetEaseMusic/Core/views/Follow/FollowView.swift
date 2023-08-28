@@ -16,9 +16,22 @@ struct FollowView: View {
         VStack () {
             Text("关注")
         }
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Text("关注")
+                MenuButtonView()
+            }
+            ToolbarItem(placement: .principal) {
+                Text("动态")
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Image(systemName: "plus")
+                    .background(.red)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+                    .onTapGesture {
+                        print("plus clicked")
+                    }
             }
         }
     }

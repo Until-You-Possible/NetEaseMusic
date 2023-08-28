@@ -12,9 +12,23 @@ struct CommunityView: View {
         VStack () {
             Text("社区")
         }
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Text("社区")
+                MenuButtonView()
+            }
+            ToolbarItem(placement: .principal) {
+                HStack () {
+                    Text("广场")
+                    Text("视频")
+                    Text("歌房")
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Image(systemName: "pencil.and.outline")
+                    .onTapGesture {
+                        print("plus clicked")
+                    }
             }
         }
     }

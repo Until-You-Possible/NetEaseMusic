@@ -61,6 +61,7 @@ struct ExploreView: View {
                             HStack (spacing: 0) {
                                 Image(systemName: "magnifyingglass")
                                     .foregroundColor(Color(hex: "#8783a2"))
+                                    .font(.system(size: 14))
                                 Text("until-you-possible-arthur")
                                     .frame(width: 196)
                                     .foregroundColor(Color(hex: "#8783a2"))
@@ -69,11 +70,8 @@ struct ExploreView: View {
                             }
                             .foregroundColor(Color(hex: "#dfd4f6"))
                             .frame(width: 260, height: 36)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                     .stroke(.gray, lineWidth: 1)
-    
-                            )
+                            .background(LinearGradient(gradient: Gradient(colors: [Color(hex: "#d5d5f6"), Color(hex: "#e8d4e8")]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(20)
                         }
                     }
                     .frame(height: 30)

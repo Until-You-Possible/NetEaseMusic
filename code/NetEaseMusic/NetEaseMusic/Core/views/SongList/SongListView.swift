@@ -7,19 +7,56 @@
 
 import SwiftUI
 
+struct ImageName {
+    var id = UUID()
+    var name: String
+}
+
+let imageArray = [
+    
+    ImageName(name: "test01"),
+    ImageName(name: "test02"),
+    ImageName(name: "test03"),
+    ImageName(name: "test04")
+
+]
+
+
+
 struct SongListView: View {
+    
     var body: some View {
+        
         VStack () {
-//            RoundedRectangle(cornerRadius: 30)
-//                .fill(
-////                    LinearGradient(colors: [Color.red], startPoint: .leading, endPoint: .bottomLeading)
-//                    LinearGradient(gradient: Gradient(colors: [.red, Color.blue]), startPoint: .leading, endPoint: .trailing)
-//                )
-            RoundedRectangle(cornerRadius: 45.0)
-                        .fill(
-                            LinearGradient(gradient: Gradient(colors: [Color.red,Color.blue]), startPoint: .leading, endPoint: .trailing)
-                        )
-                        .frame(width: 300,height: 200)
+            
+            // parallax
+            GeometryReader(content: { geomotry in
+                
+                let size = geomotry.size
+                
+                ScrollView (.horizontal) {
+                    
+                    HStack (spacing: 10) {
+                        
+                        ForEach(imageArray, id: \.id) { image in
+                            
+                            GeometryReader { proxy in
+                                let cardSize = proxy.size
+                                Image(image.name)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: cardSize.width, height: cardSize.height)
+                                    .cornerRadius(15)
+                            }
+                            .frame(width: size.width)
+                            
+                        }
+                    }
+                    
+                }
+                .scrollIndicators(.hidden)
+            })
+            .frame(height: 500)
             
         }
     }
