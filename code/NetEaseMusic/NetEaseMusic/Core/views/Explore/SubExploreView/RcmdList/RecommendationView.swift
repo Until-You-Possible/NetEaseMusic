@@ -28,42 +28,10 @@ struct RecommendationView: View {
                 ScrollView (.horizontal) {
                     HStack {
                         ForEach(listData, id: \.dictionaryValue["creativeId"]?.intValue) { current in
-                            VStack () {
-                                HStack () {
-                                    AsyncImage(url: URL(string: current["uiElement"]["image"]["imageUrl"].stringValue)) { image in
-                                        image
-                                            .resizable()
-                                            .frame(width: 140, height: 140)
-                                            .cornerRadius(10)
-                                    } placeholder: {
-                                        ProgressView()
-                                            .frame(width: 140, height: 140)
-                                    }
-                                }
-                                .overlay (
-                                    FontIcon.text(.materialIcon(code: .play_circle_filled),
-                                                  fontsize: 26, color: Color.gray)
-                                    .offset(x: -10, y: -10),
-                                    alignment: .bottomTrailing
-                                )
-                                .overlay (
-                                    HStack {
-                                        Text("456万")
-                                            .foregroundColor(Color.white)
-                                            .font(.system(size: 12))
-                                            .offset(
-                                                x: -10,
-                                                y: 10
-                                            )
-                                    },
-                                    alignment: .topTrailing
-                                )
-                                
-                                Text(current["uiElement"]["mainTitle"]["title"].stringValue)
-                                    .font(.system(size: 12))
-                                    .lineLimit(2)
-                            }
-                            .frame(width: 140)
+                            let currnetCardCoverURL = current["uiElement"]["image"]["imageUrl"].stringValue
+                            let currentCardBottomText = current["uiElement"]["mainTitle"]["title"].stringValue
+                            RcmdCardView(cardImgURL: currnetCardCoverURL, cardWidth: 140, cardHeight: 140,
+                                         bottomText: currentCardBottomText, playedCount: "230万")
                         }
 
                     }
@@ -72,7 +40,6 @@ struct RecommendationView: View {
             }
             else {
                 ProgressView()
-                    .frame(height: 140)
             }
         }
         .onAppear() {

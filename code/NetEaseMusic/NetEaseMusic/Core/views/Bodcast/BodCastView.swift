@@ -71,7 +71,7 @@ struct BodCastView: View {
             
             // MARK: radio area
             VStack () {
-                Text("电台区域(难点 重点")
+                Text("电台区域(难点 重点) 目前能看到的是一个拨盘且有阻尼振动的效果")
             }
             .frame(width: UIScreen.main.bounds.width, height: 200)
             .border(.gray, width: 1)
