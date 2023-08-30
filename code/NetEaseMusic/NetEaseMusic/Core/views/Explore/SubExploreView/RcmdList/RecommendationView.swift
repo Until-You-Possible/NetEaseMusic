@@ -12,6 +12,7 @@ import SwiftUIFontIcon
 struct RecommendationView: View {
     
     @ObservedObject var rcmdSong = RecommendationViewModel()
+
     
     var body: some View {
         VStack () {
@@ -28,14 +29,11 @@ struct RecommendationView: View {
                 ScrollView (.horizontal) {
                     HStack {
                         ForEach(listData, id: \.dictionaryValue["creativeId"]?.intValue) { current in
-                            let currnetCardCoverURL = current["uiElement"]["image"]["imageUrl"].stringValue
-                            let currentCardBottomText = current["uiElement"]["mainTitle"]["title"].stringValue
-                            RcmdCardView(cardImgURL: currnetCardCoverURL, cardWidth: 140, cardHeight: 140,
-                                         bottomText: currentCardBottomText, playedCount: "230万")
+                            let currentResources = current["resources"]
+                            RcmdCardView(resourcesArray: currentResources.array ?? [])
                         }
 
                     }
-
                 }
             }
             else {

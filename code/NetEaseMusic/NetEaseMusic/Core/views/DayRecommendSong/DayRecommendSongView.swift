@@ -198,7 +198,7 @@ struct DayRecommendSongView: View {
                     }
                 }
                 // MARK: center control buttons
-                ToolbarItem() {
+                ToolbarItem(placement: .principal) {
                         ZStack () {
                             Color.gray
                                 .opacity(0.6)
